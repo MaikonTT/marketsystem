@@ -12,8 +12,8 @@ namespace marketsystem.classes
         public string desc { get; set; }
         public double peso { get; set; }
         public int quantidade { get; set; }
-        public double valor_custo { get; set; }
-        public double valor_venda { get; set; }
+        public double val_custo { get; set; }
+        public double val_venda { get; set; }
         public Marca marca;
 
         public Produto() {
@@ -24,8 +24,8 @@ namespace marketsystem.classes
             desc = d;
             peso = p;
             quantidade = qt;
-            valor_custo = vc;
-            valor_venda = vv;
+            val_custo = vc;
+            val_venda = vv;
         }
     }
 }
