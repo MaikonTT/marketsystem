@@ -13,10 +13,10 @@ namespace marketsystem.util
         {
             //string de conexão
             string strConexao = string.Format("Server={0}; Port={1}; User Id={2}; Password={3}; Database={4}",
-                                              "localhostl", "5432", "postgres", "postgres", "dbmarket");
+                                              "localhost", "5432", "postgres", "postgres", "dbmarket");
 
             //abre conexão com o banco
-            NpgsqlConnection conexao = new NpgsqlConnection();
+            NpgsqlConnection conexao = new NpgsqlConnection(strConexao);
             conexao.Open();
 
             //retorna conexão;

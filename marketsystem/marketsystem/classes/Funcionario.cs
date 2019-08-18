@@ -8,24 +8,24 @@ namespace marketsystem.classes
 {
     class Funcionario
     {
-        public int id { get; set; }
-        public string nome { get; set; }
-        public string cargo { get; set; }
-        public string endereco { get; set; }
-        public string telefone { get; set; }
-        public string data_nasc { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Cargo { get; set; }
+        public string Endereco { get; set; }
+        public string Telefone { get; set; }
+        public string Data_nasc { get; set; }
 
         public Funcionario() {
         }
 
         public Funcionario(int i, string n, string c, string e, string t, string d)
         {
-            id = i;
-            nome = n;
-            cargo = c;
-            endereco = e;
-            telefone = t;
-            data_nasc = d;
+            Id = i;
+            Nome = n;
+            Cargo = c;
+            Endereco = e;
+            Telefone = t;
+            Data_nasc = d;
         }
     }
 }
