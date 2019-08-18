@@ -12,8 +12,9 @@ namespace marketsystem.dao
 {
     class FuncionarioDAO
     {
-        private static string SELECT_ALL = "SELECT * FROM funcionario ORDER BY id_func ASC";
-
+        public string SELECT_ALL = "SELECT * FROM funcionario ORDER BY id_func ASC";
+        public string INSERT = "INSERT INTO funcionario (nome, cargo, endereco, telefone, data_nasc) VALUES (@nome, @cargo, @endereco, @telefone, @data_nasc)";
+        
         public List<Funcionario> Listar()
         {
             //abre conexao
@@ -30,7 +31,7 @@ namespace marketsystem.dao
                 NpgsqlCommand cmd = new NpgsqlCommand(SELECT_ALL, conexao);
                 NpgsqlDataReader dr = cmd.ExecuteReader();
 
-                while(dr.Read())
+                while (dr.Read())
                 {
                     Funcionario f = new Funcionario();
                     f.Id = int.Parse(dr["id_func"].ToString());
@@ -43,16 +44,45 @@ namespace marketsystem.dao
                 }
                 return func;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 //trata o erro
                 throw new Exception("Erro ao cadastrar " + e.Message);
-            }           
+            }
             finally
             {
                 //finaliza conexao
                 conexao.Close();
             }
         }
+
+        public void Cadastrar(Funcionario f)
+        {
+            NpgsqlConnection conexao = null;
+
+            try
+            {
+                conexao = new Conexao().CriarConexao();
+
+                NpgsqlCommand cmd = new NpgsqlCommand(INSERT, conexao);
+
+                cmd.Parameters.Add(new NpgsqlParameter("@nome", f.Nome));
+                cmd.Parameters.Add(new NpgsqlParameter("@cargo", f.Cargo));
+                cmd.Parameters.Add(new NpgsqlParameter("@endereco", f.Endereco));
+                cmd.Parameters.Add(new NpgsqlParameter("@telefone", f.Telefone));
+                cmd.Parameters.Add(new NpgsqlParameter("@data_nasc", f.Data_nasc));
+
+                cmd.ExecuteNonQuery();                
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Não foi possível cadastrar funcionario " + e.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+        
     }
 }
