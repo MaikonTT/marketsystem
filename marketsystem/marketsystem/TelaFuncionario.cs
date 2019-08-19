@@ -22,7 +22,8 @@ namespace marketsystem
         private void BtnListar_Click(object sender, EventArgs e)
         {
             FuncionarioDAO fDAO = new FuncionarioDAO();
-            List<Funcionario> dataDAO = fDAO.Listar();
+            Funcionario f = new Funcionario();
+            List<Funcionario> dataDAO = fDAO.Listar();           
             dgvFunc.DataSource = dataDAO;
         }
 
