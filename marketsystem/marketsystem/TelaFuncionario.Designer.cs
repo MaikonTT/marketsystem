@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.dgvFunc = new System.Windows.Forms.DataGridView();
-            this.BtnListar = new System.Windows.Forms.Button();
-            this.BtnCadastrar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.btnEnviar = new System.Windows.Forms.Button();
             this.labNome = new System.Windows.Forms.Label();
             this.labCargo = new System.Windows.Forms.Label();
             this.labEndereco = new System.Windows.Forms.Label();
@@ -42,6 +42,7 @@
             this.txtData_nasc = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.gbFormularioCad = new System.Windows.Forms.GroupBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).BeginInit();
             this.gbFormularioCad.SuspendLayout();
             this.SuspendLayout();
@@ -50,33 +51,39 @@
             // 
             this.dgvFunc.AllowUserToAddRows = false;
             this.dgvFunc.AllowUserToDeleteRows = false;
+            this.dgvFunc.AllowUserToResizeRows = false;
+            this.dgvFunc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvFunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFunc.Location = new System.Drawing.Point(12, 12);
             this.dgvFunc.Name = "dgvFunc";
             this.dgvFunc.ReadOnly = true;
             this.dgvFunc.RowHeadersVisible = false;
+            this.dgvFunc.RowHeadersWidth = 40;
+            this.dgvFunc.RowTemplate.Height = 15;
+            this.dgvFunc.RowTemplate.ReadOnly = true;
+            this.dgvFunc.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvFunc.Size = new System.Drawing.Size(884, 310);
             this.dgvFunc.TabIndex = 0;
             // 
-            // BtnListar
+            // btnListar
             // 
-            this.BtnListar.Location = new System.Drawing.Point(12, 328);
-            this.BtnListar.Name = "BtnListar";
-            this.BtnListar.Size = new System.Drawing.Size(64, 23);
-            this.BtnListar.TabIndex = 1;
-            this.BtnListar.Text = "Listar";
-            this.BtnListar.UseVisualStyleBackColor = true;
-            this.BtnListar.Click += new System.EventHandler(this.BtnListar_Click);
+            this.btnListar.Location = new System.Drawing.Point(12, 328);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(64, 23);
+            this.btnListar.TabIndex = 1;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
-            // BtnCadastrar
+            // btnEnviar
             // 
-            this.BtnCadastrar.Location = new System.Drawing.Point(132, 215);
-            this.BtnCadastrar.Name = "BtnCadastrar";
-            this.BtnCadastrar.Size = new System.Drawing.Size(134, 23);
-            this.BtnCadastrar.TabIndex = 2;
-            this.BtnCadastrar.Text = "Cadastrar";
-            this.BtnCadastrar.UseVisualStyleBackColor = true;
-            this.BtnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
+            this.btnEnviar.Location = new System.Drawing.Point(132, 215);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(134, 23);
+            this.btnEnviar.TabIndex = 2;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // labNome
             // 
@@ -160,7 +167,7 @@
             // 
             // gbFormularioCad
             // 
-            this.gbFormularioCad.Controls.Add(this.BtnCadastrar);
+            this.gbFormularioCad.Controls.Add(this.btnEnviar);
             this.gbFormularioCad.Controls.Add(this.labData_nasc);
             this.gbFormularioCad.Controls.Add(this.txtEndereco);
             this.gbFormularioCad.Controls.Add(this.labTelefone);
@@ -171,19 +178,31 @@
             this.gbFormularioCad.Controls.Add(this.txtCargo);
             this.gbFormularioCad.Controls.Add(this.labEndereco);
             this.gbFormularioCad.Controls.Add(this.labCargo);
-            this.gbFormularioCad.Location = new System.Drawing.Point(172, 328);
+            this.gbFormularioCad.Location = new System.Drawing.Point(253, 328);
             this.gbFormularioCad.Name = "gbFormularioCad";
             this.gbFormularioCad.Size = new System.Drawing.Size(643, 252);
             this.gbFormularioCad.TabIndex = 11;
             this.gbFormularioCad.TabStop = false;
             this.gbFormularioCad.Text = "Cadastrar";
+            this.gbFormularioCad.Visible = false;
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Location = new System.Drawing.Point(83, 328);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCadastrar.TabIndex = 12;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // TelaFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 592);
-            this.Controls.Add(this.BtnListar);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.btnListar);
             this.Controls.Add(this.dgvFunc);
             this.Controls.Add(this.gbFormularioCad);
             this.Name = "TelaFuncionario";
@@ -198,8 +217,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvFunc;
-        private System.Windows.Forms.Button BtnListar;
-        private System.Windows.Forms.Button BtnCadastrar;
+        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Label labNome;
         private System.Windows.Forms.Label labCargo;
         private System.Windows.Forms.Label labEndereco;
@@ -211,5 +230,6 @@
         private System.Windows.Forms.TextBox txtData_nasc;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.GroupBox gbFormularioCad;
+        private System.Windows.Forms.Button btnCadastrar;
     }
 }

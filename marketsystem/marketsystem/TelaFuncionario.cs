@@ -19,15 +19,12 @@ namespace marketsystem
             InitializeComponent();
         }
 
-        private void BtnListar_Click(object sender, EventArgs e)
+        private void btnListar_Click(object sender, EventArgs e)
         {
-            FuncionarioDAO fDAO = new FuncionarioDAO();
-            Funcionario f = new Funcionario();
-            List<Funcionario> dataDAO = fDAO.Listar();           
-            dgvFunc.DataSource = dataDAO;
+            Listar();
         }
 
-        private void BtnCadastrar_Click(object sender, EventArgs e)
+        private void btnEnviar_Click(object sender, EventArgs e)
         {
             //adiciona o input nas variaveis
             string Nome = txtNome.Text;
@@ -64,7 +61,30 @@ namespace marketsystem
                 txtData_nasc.Clear();
                 txtTelefone.Clear();
                 txtEndereco.Clear();
+
+                Listar();
             }
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            if (gbFormularioCad.Visible == false)
+            {
+                gbFormularioCad.Show();
+            }
+            else
+            {
+                gbFormularioCad.Hide();
+            }
+        }
+
+        private void Listar()
+        {
+            FuncionarioDAO fDAO = new FuncionarioDAO();
+            Funcionario f = new Funcionario();
+            List<Funcionario> dataDAO = fDAO.Listar();
+            dgvFunc.DataSource = dataDAO;
+        }
+
     }
 }
