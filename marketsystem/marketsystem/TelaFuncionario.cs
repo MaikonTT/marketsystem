@@ -86,5 +86,9 @@ namespace marketsystem
             dgvFunc.DataSource = dataDAO;
         }
 
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

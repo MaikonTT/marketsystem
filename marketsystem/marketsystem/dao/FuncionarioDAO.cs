@@ -13,8 +13,11 @@ namespace marketsystem.dao
     class FuncionarioDAO
     {
         public string SELECT_ALL = "SELECT * FROM funcionario ORDER BY id_func ASC";
+        public string SELECT = "SELECT * FROM funcionario WHERE id = @id";
         public string INSERT = "INSERT INTO funcionario (nome, cargo, endereco, telefone, data_nasc) VALUES (@nome, @cargo, @endereco, @telefone, @data_nasc)";
-        
+        public string UPDATE = "";
+        public string DELETE = "";
+
         public List<Funcionario> Listar()
         {
             //abre conexao
@@ -72,7 +75,7 @@ namespace marketsystem.dao
                 cmd.Parameters.Add(new NpgsqlParameter("@telefone", f.Telefone));
                 cmd.Parameters.Add(new NpgsqlParameter("@data_nasc", f.Data_nasc));
 
-                cmd.ExecuteNonQuery();                
+                cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -83,6 +86,29 @@ namespace marketsystem.dao
                 conexao.Close();
             }
         }
-        
+
+        public Funcionario Buscar(Funcionario f)
+        {
+            NpgsqlConnection conexao = null;
+
+            try
+            {
+                conexao = new Conexao().CriarConexao();
+
+                NpgsqlCommand cmd = new NpgsqlCommand(SELECT, conexao);
+
+                cmd.Parameters.Add(new NpgsqlParameter("@id", f.Id));
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Não foi possível encontra funcionário " + e.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return f;
+        }
     }
 }
