@@ -13,7 +13,7 @@ namespace marketsystem.dao
     class FuncionarioDAO
     {
         public string SELECT_ALL = "SELECT * FROM funcionario ORDER BY id_func ASC";
-        public string SELECT = "SELECT * FROM funcionario WHERE id = @id";
+        public string SELECT = "SELECT * FROM funcionario WHERE nome ILIKE @item OR cargo ILIKE @item OR endereco ILIKE @item OR telefone ILIKE @item OR data_nasc ILIKE @item";
         public string INSERT = "INSERT INTO funcionario (nome, cargo, endereco, telefone, data_nasc) VALUES (@nome, @cargo, @endereco, @telefone, @data_nasc)";
         public string UPDATE = "";
         public string DELETE = "";
@@ -87,18 +87,33 @@ namespace marketsystem.dao
             }
         }
 
-        public Funcionario Buscar(Funcionario f)
+        public List<Funcionario> Buscar(string item)
         {
             NpgsqlConnection conexao = null;
+            List<Funcionario> func = new List<Funcionario>();
 
             try
             {
                 conexao = new Conexao().CriarConexao();
 
                 NpgsqlCommand cmd = new NpgsqlCommand(SELECT, conexao);
+                cmd.Parameters.Add(new NpgsqlParameter("@item", item));               
 
-                cmd.Parameters.Add(new NpgsqlParameter("@id", f.Id));
-                cmd.ExecuteNonQuery();
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+
+
+                    Funcionario f = new Funcionario();
+                    f.Id = int.Parse(dr["id_func"].ToString());
+                    f.Nome = dr["nome"].ToString();
+                    f.Cargo = dr["cargo"].ToString();
+                    f.Endereco = dr["endereco"].ToString();
+                    f.Telefone = dr["telefone"].ToString();
+                    f.Data_nasc = dr["data_nasc"].ToString();
+                    func.Add(f);
+                }
+                return func;
             }
             catch (Exception e)
             {
@@ -108,7 +123,6 @@ namespace marketsystem.dao
             {
                 conexao.Close();
             }
-            return f;
         }
     }
 }

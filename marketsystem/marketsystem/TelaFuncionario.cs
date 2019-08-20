@@ -58,9 +58,9 @@ namespace marketsystem
             {
                 txtNome.Clear();
                 txtCargo.Clear();
-                txtData_nasc.Clear();
-                txtTelefone.Clear();
                 txtEndereco.Clear();
+                txtTelefone.Clear();
+                txtData_nasc.Clear();
 
                 Listar();
             }
@@ -68,27 +68,56 @@ namespace marketsystem
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (gbFormularioCad.Visible == false)
+            if (gbCadastrar.Visible == false)
             {
-                gbFormularioCad.Show();
+                gbCadastrar.Show();
+                gbAlterar.Hide();
             }
             else
             {
-                gbFormularioCad.Hide();
+                gbCadastrar.Hide();
             }
-        }
-
-        private void Listar()
-        {
-            FuncionarioDAO fDAO = new FuncionarioDAO();
-            Funcionario f = new Funcionario();
-            List<Funcionario> dataDAO = fDAO.Listar();
-            dgvFunc.DataSource = dataDAO;
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            
+            if (gbAlterar.Visible == false)
+            {
+                gbAlterar.Show();
+                gbCadastrar.Hide();
+            }
+            else
+            {
+                gbAlterar.Hide();
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Buscar();
+            if (txtBuscar.Text == "" || txtBuscar.Text == " ")
+            {
+                dgvFunc.DataSource = "";
+            }
+        }
+
+        //metodos da DAO
+        private void Listar()
+        {
+            FuncionarioDAO fDAO = new FuncionarioDAO();
+            List<Funcionario> dataDAO = fDAO.Listar();
+            dgvFunc.DataSource = dataDAO;
+        }
+
+        private void Buscar()
+        {
+            FuncionarioDAO fDAO = new FuncionarioDAO();
+            Funcionario f = new Funcionario();
+            string item = txtBuscar.Text;
+            item = "%" + item + "%";
+
+            List<Funcionario> dataDAO = fDAO.Buscar(item);
+            dgvFunc.DataSource = dataDAO;
         }
     }
 }
