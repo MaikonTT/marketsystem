@@ -26,6 +26,52 @@ namespace marketsystem
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            Cadastrar();
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            if (gbCadastrar.Visible == false)
+            {
+                gbCadastrar.Show();
+                gbAlterar.Hide();
+            }
+            else
+            {
+                gbCadastrar.Hide();
+            }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (gbAlterar.Visible == false)
+            {
+                gbAlterar.Show();
+                gbCadastrar.Hide();
+            }
+            else
+            {
+                gbAlterar.Hide();
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Buscar();
+            if (txtBuscar.Text == "" || txtBuscar.Text == " ")
+            {
+                dgvFunc.DataSource = "";
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            Excluir();
+        }
+
+        //metodos da DAO
+        private void Cadastrar()
+        {
             //adiciona o input nas variaveis
             string Nome = txtNome.Text;
             string Cargo = txtCargo.Text;
@@ -66,47 +112,14 @@ namespace marketsystem
             }
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            if (gbCadastrar.Visible == false)
-            {
-                gbCadastrar.Show();
-                gbAlterar.Hide();
-            }
-            else
-            {
-                gbCadastrar.Hide();
-            }
-        }
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            if (gbAlterar.Visible == false)
-            {
-                gbAlterar.Show();
-                gbCadastrar.Hide();
-            }
-            else
-            {
-                gbAlterar.Hide();
-            }
-        }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            Buscar();
-            if (txtBuscar.Text == "" || txtBuscar.Text == " ")
-            {
-                dgvFunc.DataSource = "";
-            }
-        }
-
-        //metodos da DAO
         private void Listar()
         {
             FuncionarioDAO fDAO = new FuncionarioDAO();
             List<Funcionario> dataDAO = fDAO.Listar();
             dgvFunc.DataSource = dataDAO;
+            
+
+            //id_col = ;
         }
 
         private void Buscar()
@@ -117,7 +130,57 @@ namespace marketsystem
             item = "%" + item + "%";
 
             List<Funcionario> dataDAO = fDAO.Buscar(item);
-            dgvFunc.DataSource = dataDAO;
+            dgvFunc.Rows.Add(dataDAO);
+        }
+
+        private void Alterar()
+        {
+            string AltNome = txtAltNome.Text;
+            string AltCargo = txtAltCargo.Text;
+            string AltEndereco = txtAltEndereco.Text;
+            string AltTelefone = txtAltTelefone.Text;
+            string AltData_nasc = txtAltData_nasc.Text;
+
+            Funcionario f = new Funcionario();
+            FuncionarioDAO fDAO = new FuncionarioDAO();
+
+            if (txtAltNome.Text != "")
+            {
+                try
+                {
+                    f.Nome = AltNome;
+                    f.Cargo = AltCargo;
+                    f.Endereco = AltEndereco;
+                    f.Telefone = AltTelefone;
+                    f.Data_nasc = AltData_nasc;
+
+                    fDAO.Alterar(f);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Não foi possível alterar funcionário " + e.Message);
+                }
+                finally
+                {
+                    txtAltNome.Clear();
+                    txtAltCargo.Clear();
+                    txtAltEndereco.Clear();
+                    txtAltTelefone.Clear();
+                    txtAltData_nasc.Clear();
+
+                    Listar();
+                }
+            }
+        }
+
+        private void Excluir()
+        {
+            int id = 999999;
+
+            FuncionarioDAO fDAO = new FuncionarioDAO();
+
+            fDAO.Excluir(id);
+            Listar();
         }
     }
 }
