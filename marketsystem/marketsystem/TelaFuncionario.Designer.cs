@@ -58,6 +58,13 @@
             this.labAltCargo = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.labBuscar = new System.Windows.Forms.Label();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cargo_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endereco_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_nasc_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).BeginInit();
             this.gbCadastrar.SuspendLayout();
             this.gbAlterar.SuspendLayout();
@@ -70,14 +77,23 @@
             this.dgvFunc.AllowUserToResizeRows = false;
             this.dgvFunc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvFunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFunc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_col,
+            this.nome_col,
+            this.cargo_col,
+            this.endereco_col,
+            this.telefone_col,
+            this.data_nasc_col});
             this.dgvFunc.Location = new System.Drawing.Point(12, 51);
             this.dgvFunc.Name = "dgvFunc";
             this.dgvFunc.ReadOnly = true;
             this.dgvFunc.RowHeadersVisible = false;
             this.dgvFunc.RowHeadersWidth = 40;
+            this.dgvFunc.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvFunc.RowTemplate.Height = 15;
             this.dgvFunc.RowTemplate.ReadOnly = true;
             this.dgvFunc.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFunc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFunc.Size = new System.Drawing.Size(884, 271);
             this.dgvFunc.TabIndex = 0;
             // 
@@ -351,11 +367,63 @@
             this.labBuscar.TabIndex = 15;
             this.labBuscar.Text = "Buscar";
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(83, 357);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.TabIndex = 16;
+            this.btnExcluir.Text = "Excluír";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // id_col
+            // 
+            this.id_col.HeaderText = "ID";
+            this.id_col.Name = "id_col";
+            this.id_col.ReadOnly = true;
+            this.id_col.Width = 30;
+            // 
+            // nome_col
+            // 
+            this.nome_col.HeaderText = "Nome";
+            this.nome_col.Name = "nome_col";
+            this.nome_col.ReadOnly = true;
+            this.nome_col.Width = 200;
+            // 
+            // cargo_col
+            // 
+            this.cargo_col.HeaderText = "Cargo";
+            this.cargo_col.Name = "cargo_col";
+            this.cargo_col.ReadOnly = true;
+            // 
+            // endereco_col
+            // 
+            this.endereco_col.HeaderText = "Endereço";
+            this.endereco_col.Name = "endereco_col";
+            this.endereco_col.ReadOnly = true;
+            this.endereco_col.Width = 250;
+            // 
+            // telefone_col
+            // 
+            this.telefone_col.HeaderText = "Telefone";
+            this.telefone_col.Name = "telefone_col";
+            this.telefone_col.ReadOnly = true;
+            this.telefone_col.Width = 150;
+            // 
+            // data_nasc_col
+            // 
+            this.data_nasc_col.HeaderText = "Data de nascimento";
+            this.data_nasc_col.Name = "data_nasc_col";
+            this.data_nasc_col.ReadOnly = true;
+            this.data_nasc_col.Width = 150;
+            // 
             // TelaFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 592);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.labBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnAlterar);
@@ -408,5 +476,12 @@
         private System.Windows.Forms.Label labAltCargo;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label labBuscar;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cargo_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endereco_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefone_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_nasc_col;
     }
 }
