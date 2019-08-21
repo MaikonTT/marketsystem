@@ -15,8 +15,8 @@ namespace marketsystem.dao
         public string SELECT_ALL = "SELECT * FROM funcionario ORDER BY id_func ASC";
         public string SELECT = "SELECT * FROM funcionario WHERE nome ILIKE @item OR cargo ILIKE @item OR endereco ILIKE @item OR telefone ILIKE @item OR data_nasc ILIKE @item";
         public string INSERT = "INSERT INTO funcionario (nome, cargo, endereco, telefone, data_nasc) VALUES (@nome, @cargo, @endereco, @telefone, @data_nasc)";
-        public string UPDATE = "";
-        public string DELETE = "";
+        public string UPDATE = "UPDATE funcionario SET ";
+        public string DELETE = "DELETE FROM funcionario WHERE id_func = @id";
 
         public List<Funcionario> Listar()
         {
@@ -97,7 +97,7 @@ namespace marketsystem.dao
                 conexao = new Conexao().CriarConexao();
 
                 NpgsqlCommand cmd = new NpgsqlCommand(SELECT, conexao);
-                cmd.Parameters.Add(new NpgsqlParameter("@item", item));               
+                cmd.Parameters.Add(new NpgsqlParameter("@item", item));
 
                 NpgsqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -118,6 +118,35 @@ namespace marketsystem.dao
             catch (Exception e)
             {
                 throw new Exception("Não foi possível encontra funcionário " + e.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public void Alterar(Funcionario f)
+        {
+
+        }
+
+        public void Excluir(int id)
+        {
+            NpgsqlConnection conexao = null;
+
+            try
+            {
+                conexao = new Conexao().CriarConexao();
+
+                NpgsqlCommand cmd = new NpgsqlCommand(DELETE, conexao);
+
+                cmd.Parameters.Add(new NpgsqlParameter("@id", id));
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Falha ao excluír " + e.Message);
             }
             finally
             {
