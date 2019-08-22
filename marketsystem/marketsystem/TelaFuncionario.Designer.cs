@@ -59,12 +59,8 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.labBuscar = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cargo_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endereco_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefone_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data_nasc_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBuscaId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).BeginInit();
             this.gbCadastrar.SuspendLayout();
             this.gbAlterar.SuspendLayout();
@@ -77,19 +73,11 @@
             this.dgvFunc.AllowUserToResizeRows = false;
             this.dgvFunc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvFunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFunc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_col,
-            this.nome_col,
-            this.cargo_col,
-            this.endereco_col,
-            this.telefone_col,
-            this.data_nasc_col});
             this.dgvFunc.Location = new System.Drawing.Point(12, 51);
             this.dgvFunc.Name = "dgvFunc";
             this.dgvFunc.ReadOnly = true;
             this.dgvFunc.RowHeadersVisible = false;
             this.dgvFunc.RowHeadersWidth = 40;
-            this.dgvFunc.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvFunc.RowTemplate.Height = 15;
             this.dgvFunc.RowTemplate.ReadOnly = true;
             this.dgvFunc.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -99,11 +87,11 @@
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(12, 328);
+            this.btnListar.Location = new System.Drawing.Point(759, 25);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(64, 23);
+            this.btnListar.Size = new System.Drawing.Size(137, 23);
             this.btnListar.TabIndex = 1;
-            this.btnListar.Text = "Listar";
+            this.btnListar.Text = "Listar todos";
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
@@ -220,19 +208,19 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(83, 328);
+            this.btnCadastrar.Location = new System.Drawing.Point(39, 335);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCadastrar.Size = new System.Drawing.Size(201, 23);
             this.btnCadastrar.TabIndex = 12;
-            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.Text = "Cadastrar Funcionário";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(165, 328);
+            this.btnAlterar.Location = new System.Drawing.Point(39, 394);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.Size = new System.Drawing.Size(201, 23);
             this.btnAlterar.TabIndex = 13;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -267,7 +255,7 @@
             this.btnAltEnviar.TabIndex = 2;
             this.btnAltEnviar.Text = "Enviar";
             this.btnAltEnviar.UseVisualStyleBackColor = true;
-            this.btnAltEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            this.btnAltEnviar.Click += new System.EventHandler(this.btnAltEnviar_Click);
             // 
             // labAltData_nasc
             // 
@@ -353,7 +341,7 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(12, 25);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(884, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(741, 20);
             this.txtBuscar.TabIndex = 14;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -369,60 +357,38 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(83, 357);
+            this.btnExcluir.Location = new System.Drawing.Point(137, 364);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(103, 23);
             this.btnExcluir.TabIndex = 16;
             this.btnExcluir.Text = "Excluír";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // id_col
+            // txtBuscaId
             // 
-            this.id_col.HeaderText = "ID";
-            this.id_col.Name = "id_col";
-            this.id_col.ReadOnly = true;
-            this.id_col.Width = 30;
+            this.txtBuscaId.Location = new System.Drawing.Point(39, 366);
+            this.txtBuscaId.Name = "txtBuscaId";
+            this.txtBuscaId.Size = new System.Drawing.Size(92, 20);
+            this.txtBuscaId.TabIndex = 11;
+            this.txtBuscaId.TextChanged += new System.EventHandler(this.txtBuscaId_TextChanged);
             // 
-            // nome_col
+            // label1
             // 
-            this.nome_col.HeaderText = "Nome";
-            this.nome_col.Name = "nome_col";
-            this.nome_col.ReadOnly = true;
-            this.nome_col.Width = 200;
-            // 
-            // cargo_col
-            // 
-            this.cargo_col.HeaderText = "Cargo";
-            this.cargo_col.Name = "cargo_col";
-            this.cargo_col.ReadOnly = true;
-            // 
-            // endereco_col
-            // 
-            this.endereco_col.HeaderText = "Endereço";
-            this.endereco_col.Name = "endereco_col";
-            this.endereco_col.ReadOnly = true;
-            this.endereco_col.Width = 250;
-            // 
-            // telefone_col
-            // 
-            this.telefone_col.HeaderText = "Telefone";
-            this.telefone_col.Name = "telefone_col";
-            this.telefone_col.ReadOnly = true;
-            this.telefone_col.Width = 150;
-            // 
-            // data_nasc_col
-            // 
-            this.data_nasc_col.HeaderText = "Data de nascimento";
-            this.data_nasc_col.Name = "data_nasc_col";
-            this.data_nasc_col.ReadOnly = true;
-            this.data_nasc_col.Width = 150;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 369);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "ID:";
             // 
             // TelaFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 592);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtBuscaId);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.labBuscar);
             this.Controls.Add(this.txtBuscar);
@@ -432,6 +398,7 @@
             this.Controls.Add(this.dgvFunc);
             this.Controls.Add(this.gbAlterar);
             this.Controls.Add(this.gbCadastrar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TelaFuncionario";
             this.Text = "TelaFuncionario";
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).EndInit();
@@ -477,11 +444,7 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label labBuscar;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cargo_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endereco_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefone_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_nasc_col;
+        private System.Windows.Forms.TextBox txtBuscaId;
+        private System.Windows.Forms.Label label1;
     }
 }

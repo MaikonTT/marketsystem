@@ -69,6 +69,22 @@ namespace marketsystem
             Excluir();
         }
 
+        private void txtBuscaId_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscaId.Text != "" && txtBuscaId.Text != " ")
+            {
+                Buscar_id();
+            }
+        }
+
+        private void btnAltEnviar_Click(object sender, EventArgs e)
+        {
+            if (txtBuscaId.Text != "" && txtBuscaId.Text != " ")
+            {
+                Alterar();
+            }
+        }
+
         //metodos da DAO
         private void Cadastrar()
         {
@@ -117,9 +133,6 @@ namespace marketsystem
             FuncionarioDAO fDAO = new FuncionarioDAO();
             List<Funcionario> dataDAO = fDAO.Listar();
             dgvFunc.DataSource = dataDAO;
-            
-
-            //id_col = ;
         }
 
         private void Buscar()
@@ -130,11 +143,26 @@ namespace marketsystem
             item = "%" + item + "%";
 
             List<Funcionario> dataDAO = fDAO.Buscar(item);
-            dgvFunc.Rows.Add(dataDAO);
+            dgvFunc.DataSource = dataDAO;
+        }
+
+        private void Buscar_id()
+        {
+            int id = Convert.ToInt32(txtBuscaId.Text);
+
+            FuncionarioDAO fDAO = new FuncionarioDAO();
+            Funcionario f = fDAO.Buscar_Id(id);
+
+            txtAltNome.Text = f.Nome;
+            txtAltCargo.Text = f.Cargo;
+            txtAltEndereco.Text = f.Endereco;
+            txtAltTelefone.Text = f.Telefone;
+            txtAltData_nasc.Text = f.Data_nasc;
         }
 
         private void Alterar()
         {
+            int id = Convert.ToInt32(txtBuscaId.Text);
             string AltNome = txtAltNome.Text;
             string AltCargo = txtAltCargo.Text;
             string AltEndereco = txtAltEndereco.Text;
@@ -148,6 +176,7 @@ namespace marketsystem
             {
                 try
                 {
+                    f.Id = id;
                     f.Nome = AltNome;
                     f.Cargo = AltCargo;
                     f.Endereco = AltEndereco;
@@ -155,6 +184,8 @@ namespace marketsystem
                     f.Data_nasc = AltData_nasc;
 
                     fDAO.Alterar(f);
+
+                    MessageBox.Show("Alterado com Sucesso!");
                 }
                 catch (Exception e)
                 {
@@ -168,6 +199,8 @@ namespace marketsystem
                     txtAltTelefone.Clear();
                     txtAltData_nasc.Clear();
 
+                    txtBuscaId.Clear();
+
                     Listar();
                 }
             }
@@ -175,12 +208,29 @@ namespace marketsystem
 
         private void Excluir()
         {
-            int id = 999999;
+            int id = Convert.ToInt32(txtBuscaId.Text);
 
-            FuncionarioDAO fDAO = new FuncionarioDAO();
+            try
+            {
+                FuncionarioDAO fDAO = new FuncionarioDAO();
+                fDAO.Excluir(id);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                txtAltNome.Clear();
+                txtAltCargo.Clear();
+                txtAltEndereco.Clear();
+                txtAltTelefone.Clear();
+                txtAltData_nasc.Clear();
 
-            fDAO.Excluir(id);
-            Listar();
+                txtBuscaId.Clear();
+
+                Listar();
+            }
         }
     }
 }
