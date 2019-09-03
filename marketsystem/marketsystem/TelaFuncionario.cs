@@ -230,6 +230,8 @@ namespace marketsystem
 
                     txtBuscaId.Clear();
 
+                    MessageBox.Show("Cadastro apagado com Sucesso", this.Text, MessageBoxButtons.OK);
+
                     Listar();
                 }
             }

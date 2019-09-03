@@ -339,6 +339,7 @@
             // 
             // txtBuscar
             // 
+            this.txtBuscar.BackColor = System.Drawing.SystemColors.Info;
             this.txtBuscar.Location = new System.Drawing.Point(12, 25);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(741, 20);
@@ -367,6 +368,7 @@
             // 
             // txtBuscaId
             // 
+            this.txtBuscaId.BackColor = System.Drawing.SystemColors.Info;
             this.txtBuscaId.Location = new System.Drawing.Point(39, 366);
             this.txtBuscaId.Name = "txtBuscaId";
             this.txtBuscaId.Size = new System.Drawing.Size(92, 20);
@@ -399,7 +401,9 @@
             this.Controls.Add(this.gbAlterar);
             this.Controls.Add(this.gbCadastrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "TelaFuncionario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaFuncionario";
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).EndInit();
             this.gbCadastrar.ResumeLayout(false);
