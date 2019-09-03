@@ -58,7 +58,7 @@ namespace marketsystem
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             Buscar();
-            if (txtBuscar.Text == "" || txtBuscar.Text == " ")
+            if (!string.IsNullOrWhiteSpace(txtBuscar.Text.Trim()))
             {
                 dgvFunc.DataSource = "";
             }
@@ -71,7 +71,7 @@ namespace marketsystem
 
         private void txtBuscaId_TextChanged(object sender, EventArgs e)
         {
-            if (txtBuscaId.Text != "" && txtBuscaId.Text != " ")
+            if (!string.IsNullOrWhiteSpace(txtBuscar.Text.Trim()))
             {
                 Buscar_id();
             }
@@ -79,7 +79,7 @@ namespace marketsystem
 
         private void btnAltEnviar_Click(object sender, EventArgs e)
         {
-            if (txtBuscaId.Text != "" && txtBuscaId.Text != " ")
+            if (!string.IsNullOrWhiteSpace(txtBuscaId.Text.Trim()))
             {
                 Alterar();
             }
@@ -172,7 +172,7 @@ namespace marketsystem
             Funcionario f = new Funcionario();
             FuncionarioDAO fDAO = new FuncionarioDAO();
 
-            if (txtAltNome.Text != "")
+            if (!string.IsNullOrWhiteSpace(txtAltNome.Text.Trim()))
             {
                 try
                 {
@@ -208,28 +208,34 @@ namespace marketsystem
 
         private void Excluir()
         {
-            int id = Convert.ToInt32(txtBuscaId.Text);
-
-            try
+            if (!string.IsNullOrWhiteSpace(txtBuscaId.Text.Trim()))
             {
-                FuncionarioDAO fDAO = new FuncionarioDAO();
-                fDAO.Excluir(id);
+                try
+                {
+                    int id = Convert.ToInt32(txtBuscaId.Text);
+                    FuncionarioDAO fDAO = new FuncionarioDAO();
+                    fDAO.Excluir(id);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    txtAltNome.Clear();
+                    txtAltCargo.Clear();
+                    txtAltEndereco.Clear();
+                    txtAltTelefone.Clear();
+                    txtAltData_nasc.Clear();
+
+                    txtBuscaId.Clear();
+
+                    Listar();
+                }
             }
-            catch (Exception e)
+            else
             {
-                MessageBox.Show(e.Message);
-            }
-            finally
-            {
-                txtAltNome.Clear();
-                txtAltCargo.Clear();
-                txtAltEndereco.Clear();
-                txtAltTelefone.Clear();
-                txtAltData_nasc.Clear();
-
-                txtBuscaId.Clear();
-
-                Listar();
+                MessageBox.Show("Digite um ID válido...", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
