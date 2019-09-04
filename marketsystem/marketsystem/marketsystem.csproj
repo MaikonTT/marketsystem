@@ -74,11 +74,11 @@
     <Compile Include="dao\FuncionarioDAO.cs" />
     <Compile Include="dao\MarcaDAO.cs" />
     <Compile Include="dao\ProdutoDAO.cs" />
-    <Compile Include="FrmControlFunc.cs">
+    <Compile Include="TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmControlFunc.Designer.cs">
-      <DependentUpon>FrmControlFunc.cs</DependentUpon>
+    <Compile Include="TelaLogin.Designer.cs">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,9 +88,15 @@
     <Compile Include="TelaFuncionario.Designer.cs">
       <DependentUpon>TelaFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelaProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaProduto.Designer.cs">
+      <DependentUpon>TelaProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="util\Conexao.cs" />
-    <EmbeddedResource Include="FrmControlFunc.resx">
-      <DependentUpon>FrmControlFunc.cs</DependentUpon>
+    <EmbeddedResource Include="TelaLogin.resx">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -103,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="TelaFuncionario.resx">
       <DependentUpon>TelaFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaProduto.resx">
+      <DependentUpon>TelaProduto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
