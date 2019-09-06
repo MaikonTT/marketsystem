@@ -51,7 +51,7 @@ namespace marketsystem.dao
             catch (Exception e)
             {
                 //trata o erro
-                throw new Exception("Erro ao cadastrar " + e.Message);
+                throw new Exception("Listar " + e.Message);
             }
             finally
             {

@@ -58,7 +58,7 @@ namespace marketsystem
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             Buscar();
-            if (!string.IsNullOrWhiteSpace(txtBuscar.Text.Trim()))
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text.Trim()))
             {
                 dgvFunc.DataSource = "";
             }
@@ -73,19 +73,26 @@ namespace marketsystem
         {
             if (!string.IsNullOrWhiteSpace(txtBuscar.Text.Trim()))
             {
-                Buscar_id();
+                int id = Int32.Parse(dgvFunc.CurrentRow.Cells[0].Value.ToString());
+                Buscar_id(id);
             }
         }
 
         private void btnAltEnviar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtBuscaId.Text.Trim()))
+            if (!string.IsNullOrWhiteSpace(txtAltId.Text.Trim()))
             {
                 Alterar();
             }
         }
 
-        //metodos da DAO
+        private void dgvFunc_SelectionChanged(object sender, EventArgs e)
+        {
+            int id = Int32.Parse(dgvFunc.CurrentRow.Cells[0].Value.ToString());
+            Buscar_id(id);
+        }
+
+        //metodos da que instancia classe e DAO
         private void Cadastrar()
         {
             //adiciona o input nas variaveis
@@ -146,13 +153,14 @@ namespace marketsystem
             dgvFunc.DataSource = dataDAO;
         }
 
-        private void Buscar_id()
+        private void Buscar_id(int id)
         {
-            int id = Convert.ToInt32(txtBuscaId.Text);
+            //int id = Convert.ToInt32(txtBuscaId.Text);
 
             FuncionarioDAO fDAO = new FuncionarioDAO();
             Funcionario f = fDAO.Buscar_Id(id);
 
+            txtAltId.Text = f.Id.ToString();
             txtAltNome.Text = f.Nome;
             txtAltCargo.Text = f.Cargo;
             txtAltEndereco.Text = f.Endereco;
@@ -162,7 +170,7 @@ namespace marketsystem
 
         private void Alterar()
         {
-            int id = Convert.ToInt32(txtBuscaId.Text);
+            int id = Convert.ToInt32(txtAltId.Text);
             string AltNome = txtAltNome.Text;
             string AltCargo = txtAltCargo.Text;
             string AltEndereco = txtAltEndereco.Text;
@@ -199,7 +207,7 @@ namespace marketsystem
                     txtAltTelefone.Clear();
                     txtAltData_nasc.Clear();
 
-                    txtBuscaId.Clear();
+                    txtAltId.Clear();
 
                     Listar();
                 }
@@ -208,11 +216,11 @@ namespace marketsystem
 
         private void Excluir()
         {
-            if (!string.IsNullOrWhiteSpace(txtBuscaId.Text.Trim()))
+            if (!string.IsNullOrWhiteSpace(txtAltId.Text.Trim()))
             {
                 try
                 {
-                    int id = Convert.ToInt32(txtBuscaId.Text);
+                    int id = Convert.ToInt32(txtAltId.Text);
                     FuncionarioDAO fDAO = new FuncionarioDAO();
                     fDAO.Excluir(id);
                 }
@@ -228,7 +236,7 @@ namespace marketsystem
                     txtAltTelefone.Clear();
                     txtAltData_nasc.Clear();
 
-                    txtBuscaId.Clear();
+                    txtAltId.Clear();
 
                     MessageBox.Show("Cadastro apagado com Sucesso", this.Text, MessageBoxButtons.OK);
 

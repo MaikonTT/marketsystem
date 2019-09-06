@@ -59,8 +59,14 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.labBuscar = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.txtBuscaId = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtAltId = new System.Windows.Forms.TextBox();
+            this.labAltId = new System.Windows.Forms.Label();
+            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cargo_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endereco_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataNasc_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).BeginInit();
             this.gbCadastrar.SuspendLayout();
             this.gbAlterar.SuspendLayout();
@@ -73,17 +79,25 @@
             this.dgvFunc.AllowUserToResizeRows = false;
             this.dgvFunc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvFunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFunc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_col,
+            this.nome_col,
+            this.cargo_col,
+            this.endereco_col,
+            this.telefone_col,
+            this.dataNasc_col});
             this.dgvFunc.Location = new System.Drawing.Point(12, 51);
             this.dgvFunc.Name = "dgvFunc";
             this.dgvFunc.ReadOnly = true;
             this.dgvFunc.RowHeadersVisible = false;
             this.dgvFunc.RowHeadersWidth = 40;
-            this.dgvFunc.RowTemplate.Height = 15;
+            this.dgvFunc.RowTemplate.Height = 20;
             this.dgvFunc.RowTemplate.ReadOnly = true;
             this.dgvFunc.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvFunc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFunc.Size = new System.Drawing.Size(884, 271);
             this.dgvFunc.TabIndex = 0;
+            this.dgvFunc.SelectionChanged += new System.EventHandler(this.dgvFunc_SelectionChanged);
             // 
             // btnListar
             // 
@@ -210,7 +224,7 @@
             // 
             this.btnCadastrar.Location = new System.Drawing.Point(39, 335);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(201, 23);
+            this.btnCadastrar.Size = new System.Drawing.Size(201, 50);
             this.btnCadastrar.TabIndex = 12;
             this.btnCadastrar.Text = "Cadastrar Funcionário";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -218,9 +232,9 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(39, 394);
+            this.btnAlterar.Location = new System.Drawing.Point(39, 391);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(201, 23);
+            this.btnAlterar.Size = new System.Drawing.Size(201, 50);
             this.btnAlterar.TabIndex = 13;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -228,7 +242,9 @@
             // 
             // gbAlterar
             // 
+            this.gbAlterar.Controls.Add(this.labAltId);
             this.gbAlterar.Controls.Add(this.btnAltEnviar);
+            this.gbAlterar.Controls.Add(this.txtAltId);
             this.gbAlterar.Controls.Add(this.labAltData_nasc);
             this.gbAlterar.Controls.Add(this.txtAltEndereco);
             this.gbAlterar.Controls.Add(this.labAltTelefone);
@@ -249,7 +265,7 @@
             // 
             // btnAltEnviar
             // 
-            this.btnAltEnviar.Location = new System.Drawing.Point(132, 215);
+            this.btnAltEnviar.Location = new System.Drawing.Point(132, 216);
             this.btnAltEnviar.Name = "btnAltEnviar";
             this.btnAltEnviar.Size = new System.Drawing.Size(134, 23);
             this.btnAltEnviar.TabIndex = 2;
@@ -260,7 +276,7 @@
             // labAltData_nasc
             // 
             this.labAltData_nasc.AutoSize = true;
-            this.labAltData_nasc.Location = new System.Drawing.Point(23, 181);
+            this.labAltData_nasc.Location = new System.Drawing.Point(23, 184);
             this.labAltData_nasc.Name = "labAltData_nasc";
             this.labAltData_nasc.Size = new System.Drawing.Size(107, 13);
             this.labAltData_nasc.TabIndex = 7;
@@ -268,7 +284,7 @@
             // 
             // txtAltEndereco
             // 
-            this.txtAltEndereco.Location = new System.Drawing.Point(132, 111);
+            this.txtAltEndereco.Location = new System.Drawing.Point(132, 114);
             this.txtAltEndereco.Name = "txtAltEndereco";
             this.txtAltEndereco.Size = new System.Drawing.Size(351, 20);
             this.txtAltEndereco.TabIndex = 10;
@@ -276,7 +292,7 @@
             // labAltTelefone
             // 
             this.labAltTelefone.AutoSize = true;
-            this.labAltTelefone.Location = new System.Drawing.Point(78, 147);
+            this.labAltTelefone.Location = new System.Drawing.Point(78, 150);
             this.labAltTelefone.Name = "labAltTelefone";
             this.labAltTelefone.Size = new System.Drawing.Size(52, 13);
             this.labAltTelefone.TabIndex = 6;
@@ -285,7 +301,7 @@
             // labAltNome
             // 
             this.labAltNome.AutoSize = true;
-            this.labAltNome.Location = new System.Drawing.Point(46, 41);
+            this.labAltNome.Location = new System.Drawing.Point(46, 44);
             this.labAltNome.Name = "labAltNome";
             this.labAltNome.Size = new System.Drawing.Size(84, 13);
             this.labAltNome.TabIndex = 3;
@@ -293,28 +309,28 @@
             // 
             // txtAltTelefone
             // 
-            this.txtAltTelefone.Location = new System.Drawing.Point(132, 144);
+            this.txtAltTelefone.Location = new System.Drawing.Point(132, 147);
             this.txtAltTelefone.Name = "txtAltTelefone";
             this.txtAltTelefone.Size = new System.Drawing.Size(134, 20);
             this.txtAltTelefone.TabIndex = 10;
             // 
             // txtAltData_nasc
             // 
-            this.txtAltData_nasc.Location = new System.Drawing.Point(132, 181);
+            this.txtAltData_nasc.Location = new System.Drawing.Point(132, 184);
             this.txtAltData_nasc.Name = "txtAltData_nasc";
             this.txtAltData_nasc.Size = new System.Drawing.Size(134, 20);
             this.txtAltData_nasc.TabIndex = 10;
             // 
             // txtAltNome
             // 
-            this.txtAltNome.Location = new System.Drawing.Point(132, 38);
+            this.txtAltNome.Location = new System.Drawing.Point(132, 41);
             this.txtAltNome.Name = "txtAltNome";
             this.txtAltNome.Size = new System.Drawing.Size(208, 20);
             this.txtAltNome.TabIndex = 8;
             // 
             // txtAltCargo
             // 
-            this.txtAltCargo.Location = new System.Drawing.Point(132, 73);
+            this.txtAltCargo.Location = new System.Drawing.Point(132, 76);
             this.txtAltCargo.Name = "txtAltCargo";
             this.txtAltCargo.Size = new System.Drawing.Size(208, 20);
             this.txtAltCargo.TabIndex = 9;
@@ -322,7 +338,7 @@
             // labAltEndereco
             // 
             this.labAltEndereco.AutoSize = true;
-            this.labAltEndereco.Location = new System.Drawing.Point(74, 111);
+            this.labAltEndereco.Location = new System.Drawing.Point(74, 114);
             this.labAltEndereco.Name = "labAltEndereco";
             this.labAltEndereco.Size = new System.Drawing.Size(56, 13);
             this.labAltEndereco.TabIndex = 5;
@@ -331,7 +347,7 @@
             // labAltCargo
             // 
             this.labAltCargo.AutoSize = true;
-            this.labAltCargo.Location = new System.Drawing.Point(92, 76);
+            this.labAltCargo.Location = new System.Drawing.Point(92, 79);
             this.labAltCargo.Name = "labAltCargo";
             this.labAltCargo.Size = new System.Drawing.Size(38, 13);
             this.labAltCargo.TabIndex = 4;
@@ -358,39 +374,91 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(137, 364);
+            this.btnExcluir.Location = new System.Drawing.Point(39, 447);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(103, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(201, 50);
             this.btnExcluir.TabIndex = 16;
             this.btnExcluir.Text = "Excluír";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // txtBuscaId
+            // txtAltId
             // 
-            this.txtBuscaId.BackColor = System.Drawing.SystemColors.Info;
-            this.txtBuscaId.Location = new System.Drawing.Point(39, 366);
-            this.txtBuscaId.Name = "txtBuscaId";
-            this.txtBuscaId.Size = new System.Drawing.Size(92, 20);
-            this.txtBuscaId.TabIndex = 11;
-            this.txtBuscaId.TextChanged += new System.EventHandler(this.txtBuscaId_TextChanged);
+            this.txtAltId.BackColor = System.Drawing.SystemColors.Info;
+            this.txtAltId.Location = new System.Drawing.Point(132, 12);
+            this.txtAltId.Name = "txtAltId";
+            this.txtAltId.ReadOnly = true;
+            this.txtAltId.Size = new System.Drawing.Size(74, 20);
+            this.txtAltId.TabIndex = 11;
+            this.txtAltId.TextChanged += new System.EventHandler(this.txtBuscaId_TextChanged);
             // 
-            // label1
+            // labAltId
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 369);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "ID:";
+            this.labAltId.AutoSize = true;
+            this.labAltId.Location = new System.Drawing.Point(109, 15);
+            this.labAltId.Name = "labAltId";
+            this.labAltId.Size = new System.Drawing.Size(21, 13);
+            this.labAltId.TabIndex = 17;
+            this.labAltId.Text = "ID:";
+            // 
+            // id_col
+            // 
+            this.id_col.DataPropertyName = "id";
+            this.id_col.HeaderText = "ID";
+            this.id_col.MinimumWidth = 10;
+            this.id_col.Name = "id_col";
+            this.id_col.ReadOnly = true;
+            this.id_col.Width = 30;
+            // 
+            // nome_col
+            // 
+            this.nome_col.DataPropertyName = "nome";
+            this.nome_col.HeaderText = "Nome";
+            this.nome_col.MinimumWidth = 150;
+            this.nome_col.Name = "nome_col";
+            this.nome_col.ReadOnly = true;
+            this.nome_col.Width = 190;
+            // 
+            // cargo_col
+            // 
+            this.cargo_col.DataPropertyName = "cargo";
+            this.cargo_col.HeaderText = "Cargo";
+            this.cargo_col.MinimumWidth = 150;
+            this.cargo_col.Name = "cargo_col";
+            this.cargo_col.ReadOnly = true;
+            this.cargo_col.Width = 150;
+            // 
+            // endereco_col
+            // 
+            this.endereco_col.DataPropertyName = "endereco";
+            this.endereco_col.HeaderText = "Endereço";
+            this.endereco_col.MinimumWidth = 200;
+            this.endereco_col.Name = "endereco_col";
+            this.endereco_col.ReadOnly = true;
+            this.endereco_col.Width = 300;
+            // 
+            // telefone_col
+            // 
+            this.telefone_col.DataPropertyName = "telefone";
+            this.telefone_col.HeaderText = "Telefone";
+            this.telefone_col.MinimumWidth = 100;
+            this.telefone_col.Name = "telefone_col";
+            this.telefone_col.ReadOnly = true;
+            // 
+            // dataNasc_col
+            // 
+            this.dataNasc_col.DataPropertyName = "data_nasc";
+            this.dataNasc_col.HeaderText = "Data de Nascimento";
+            this.dataNasc_col.MinimumWidth = 100;
+            this.dataNasc_col.Name = "dataNasc_col";
+            this.dataNasc_col.ReadOnly = true;
+            this.dataNasc_col.Width = 110;
             // 
             // TelaFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 592);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtBuscaId);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.labBuscar);
             this.Controls.Add(this.txtBuscar);
@@ -448,7 +516,13 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label labBuscar;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.TextBox txtBuscaId;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtAltId;
+        private System.Windows.Forms.Label labAltId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cargo_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endereco_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefone_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataNasc_col;
     }
 }
