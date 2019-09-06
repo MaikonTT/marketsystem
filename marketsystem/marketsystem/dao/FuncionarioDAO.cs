@@ -7,7 +7,6 @@ using marketsystem.classes;
 using Npgsql;
 using marketsystem.util;
 
-
 namespace marketsystem.dao
 {
     class FuncionarioDAO

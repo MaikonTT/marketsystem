@@ -275,9 +275,9 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(39, 335);
+            this.btnCadastrar.Location = new System.Drawing.Point(12, 335);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(201, 50);
+            this.btnCadastrar.Size = new System.Drawing.Size(228, 50);
             this.btnCadastrar.TabIndex = 12;
             this.btnCadastrar.Text = "Cadastrar Funcionário";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -285,9 +285,9 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(39, 391);
+            this.btnAlterar.Location = new System.Drawing.Point(12, 391);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(201, 50);
+            this.btnAlterar.Size = new System.Drawing.Size(228, 50);
             this.btnAlterar.TabIndex = 13;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -446,9 +446,9 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(39, 447);
+            this.btnExcluir.Location = new System.Drawing.Point(12, 447);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(201, 50);
+            this.btnExcluir.Size = new System.Drawing.Size(228, 50);
             this.btnExcluir.TabIndex = 16;
             this.btnExcluir.Text = "Excluír";
             this.btnExcluir.UseVisualStyleBackColor = true;
