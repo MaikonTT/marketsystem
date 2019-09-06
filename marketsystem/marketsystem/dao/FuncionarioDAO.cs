@@ -25,7 +25,7 @@ namespace marketsystem.dao
 
             try
             {
-                List<Funcionario> func = new List<Funcionario>();
+                List<Funcionario> listaFunc = new List<Funcionario>();
 
                 //cria conexao
                 conexao = new Conexao().CriarConexao();
@@ -43,9 +43,9 @@ namespace marketsystem.dao
                     f.Endereco = dr["endereco"].ToString();
                     f.Telefone = dr["telefone"].ToString();
                     f.Data_nasc = dr["data_nasc"].ToString();
-                    func.Add(f);
+                    listaFunc.Add(f);
                 }
-                return func;
+                return listaFunc;
             }
             catch (Exception ex)
             {
@@ -90,7 +90,7 @@ namespace marketsystem.dao
         public List<Funcionario> Buscar(string item)
         {
             NpgsqlConnection conexao = null;
-            List<Funcionario> func = new List<Funcionario>();
+            List<Funcionario> listaFunc = new List<Funcionario>();
 
             try
             {
@@ -102,8 +102,6 @@ namespace marketsystem.dao
                 NpgsqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-
-
                     Funcionario f = new Funcionario();
                     f.Id = int.Parse(dr["id_func"].ToString());
                     f.Nome = dr["nome"].ToString();
@@ -111,9 +109,9 @@ namespace marketsystem.dao
                     f.Endereco = dr["endereco"].ToString();
                     f.Telefone = dr["telefone"].ToString();
                     f.Data_nasc = dr["data_nasc"].ToString();
-                    func.Add(f);
+                    listaFunc.Add(f);
                 }
-                return func;
+                return listaFunc;
             }
             catch (Exception ex)
             {

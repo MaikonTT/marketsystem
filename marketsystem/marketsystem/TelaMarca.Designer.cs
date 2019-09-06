@@ -98,6 +98,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(773, 20);
             this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // labBuscar
             // 
@@ -253,6 +254,7 @@
             this.btnCadEnviar.TabIndex = 14;
             this.btnCadEnviar.Text = "Enviar";
             this.btnCadEnviar.UseVisualStyleBackColor = true;
+            this.btnCadEnviar.Click += new System.EventHandler(this.btnCadEnviar_Click);
             // 
             // gbCadastrar
             // 
@@ -424,12 +426,12 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.gbAlterar);
             this.Controls.Add(this.gbCadastrar);
             this.Controls.Add(this.btnListarTodos);
             this.Controls.Add(this.labBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dgvMarca);
+            this.Controls.Add(this.gbAlterar);
             this.Name = "TelaMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaMarca";

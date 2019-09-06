@@ -12,9 +12,9 @@ namespace marketsystem.dao
     class MarcaDAO
     {
         public string SELECT_ALL = "SELECT * FROM marca ORDER BY id_marca ASC";
-        public string SELECT = "";
+        public string SELECT = "SELECT * FROM marca WHERE nome ILIKE @item OR cnpj ILIKE @item OR telefone ILIKE @item OR endereco ILIKE @item";
         public string SELECT_ID = "SELECT * FROM marca WHERE id_marca = @id";
-        public string INSERT = "";
+        public string INSERT = "INSERT INTO marca (nome, cnpj, telefone, endereco) VALUES (@nome, @cnpj, @telefone, @endereco)";
         public string UPDATE = "";
         public string DELETE = "";
 
@@ -45,6 +45,41 @@ namespace marketsystem.dao
             catch (Exception ex)
             {
                 throw new Exception("Falha ao carregar Marcas " + ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public List<Marca> Buscar(string item)
+        {
+            NpgsqlConnection conexao = null;
+            List<Marca> listaMarcas = new List<Marca>();
+
+            try
+            {
+                conexao = new Conexao().CriarConexao();
+                NpgsqlCommand cmd = new NpgsqlCommand(SELECT, conexao);
+                cmd.Parameters.Add(new NpgsqlParameter("@item", item));
+
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Marca marca = new Marca();
+                    marca.Id = int.Parse(dr["id_marca"].ToString());
+                    marca.Nome = dr["nome"].ToString();
+                    marca.Cnpj = dr["cnpj"].ToString();
+                    marca.Telefone = dr["telefone"].ToString();
+                    marca.Endereco = dr["endereco"].ToString();
+                    listaMarcas.Add(marca);
+                }
+                return listaMarcas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível encontrar Marca " + ex.Message);
             }
             finally
             {
@@ -84,5 +119,35 @@ namespace marketsystem.dao
                 conexao.Close();
             }
         }
+
+        public void Cadastrar(Marca marca)
+        {
+            NpgsqlConnection conexao = null;
+
+            try
+            {
+                conexao = new Conexao().CriarConexao();
+                NpgsqlCommand cmd = new NpgsqlCommand(INSERT, conexao);
+
+                cmd.Parameters.Add(new NpgsqlParameter("@nome",marca.Nome));
+                cmd.Parameters.Add(new NpgsqlParameter("@cnpj", marca.Cnpj));
+                cmd.Parameters.Add(new NpgsqlParameter("@telefone", marca.Telefone));
+                cmd.Parameters.Add(new NpgsqlParameter("@endereco", marca.Endereco));
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível cadastrar " + ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public void Alterar() { }
+
+        public void Excluir() { }
     }
 }

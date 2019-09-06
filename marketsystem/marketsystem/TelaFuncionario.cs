@@ -63,7 +63,7 @@ namespace marketsystem
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             Buscar();
-            if (string.IsNullOrWhiteSpace(txtBuscar.Text.Trim()))
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
                 dgvFunc.DataSource = "";
             }
@@ -176,12 +176,9 @@ namespace marketsystem
         }
 
         private void Buscar()
-        {
+        {            
+            string item = "%" + txtBuscar.Text.Trim() + "%";
             FuncionarioDAO fDAO = new FuncionarioDAO();
-            Funcionario f = new Funcionario();
-            string item = txtBuscar.Text;
-            item = "%" + item + "%";
-
             List<Funcionario> dataDAO = fDAO.Buscar(item);
             dgvFunc.DataSource = dataDAO;
         }
