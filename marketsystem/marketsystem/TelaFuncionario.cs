@@ -66,7 +66,18 @@ namespace marketsystem
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Excluir();
+            if (!string.IsNullOrWhiteSpace(txtAltNome.Text))
+            {
+                string func = txtAltNome.Text;
+                if (MessageBox.Show($"Deseja excluir: {func}?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Excluir();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um funcionário primeiro...","Aviso", MessageBoxButtons.OK);
+            }
         }
 
         private void txtBuscaId_TextChanged(object sender, EventArgs e)
