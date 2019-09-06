@@ -427,6 +427,7 @@
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dgvMarca);
             this.Name = "TelaMarca";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaMarca";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).EndInit();
             this.gbCadastrar.ResumeLayout(false);
