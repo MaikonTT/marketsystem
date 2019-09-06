@@ -50,12 +50,30 @@ namespace marketsystem
             }
         }
 
+        private void dgvMarca_SelectionChanged(object sender, EventArgs e)
+        {
+            int id = Int32.Parse(dgvMarca.CurrentRow.Cells[0].Value.ToString());
+            Buscar_id(id);
+        }
+
         //Métodos de acesso a Classe e a DAO
         private void Listar()
         {
             MarcaDAO mDAO = new MarcaDAO();
             List<Marca> dataDAO = mDAO.Listar();
             dgvMarca.DataSource = dataDAO;
+        }
+
+        private void Buscar_id(int id)
+        {
+            MarcaDAO mDAO = new MarcaDAO();
+            Marca marca = mDAO.Buscar_Id(id);
+
+            txtAltId.Text = marca.Id.ToString();
+            txtAltNome.Text = marca.Nome;
+            txtAltCnpj.Text = marca.Cnpj;
+            txtAltTelefone.Text = marca.Telefone;
+            txtAltEndereco.Text = marca.Endereco;
         }
     }
 }

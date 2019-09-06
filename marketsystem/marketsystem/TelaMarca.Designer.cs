@@ -73,6 +73,8 @@
             // 
             this.dgvMarca.AllowUserToAddRows = false;
             this.dgvMarca.AllowUserToDeleteRows = false;
+            this.dgvMarca.AllowUserToResizeRows = false;
+            this.dgvMarca.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMarca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_col,
@@ -84,8 +86,10 @@
             this.dgvMarca.Name = "dgvMarca";
             this.dgvMarca.ReadOnly = true;
             this.dgvMarca.RowHeadersVisible = false;
+            this.dgvMarca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMarca.Size = new System.Drawing.Size(952, 247);
             this.dgvMarca.TabIndex = 0;
+            this.dgvMarca.SelectionChanged += new System.EventHandler(this.dgvMarca_SelectionChanged);
             // 
             // txtBuscar
             // 

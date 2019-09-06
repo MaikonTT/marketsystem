@@ -47,10 +47,10 @@ namespace marketsystem.dao
                 }
                 return func;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 //trata o erro
-                throw new Exception("Listar " + e.Message);
+                throw new Exception("Listar " + ex.Message);
             }
             finally
             {
@@ -77,9 +77,9 @@ namespace marketsystem.dao
 
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("Não foi possível cadastrar funcionario " + e.Message);
+                throw new Exception("Não foi possível cadastrar funcionario " + ex.Message);
             }
             finally
             {
@@ -115,9 +115,9 @@ namespace marketsystem.dao
                 }
                 return func;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("Não foi possível encontra funcionário " + e.Message);
+                throw new Exception("Não foi possível encontra funcionário " + ex.Message);
             }
             finally
             {
@@ -150,9 +150,9 @@ namespace marketsystem.dao
                 }
                 return f;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("Não foi possível encontra funcionário " + e.Message);
+                throw new Exception("Não foi possível encontra funcionário " + ex.Message);
             }
             finally
             {
@@ -180,9 +180,9 @@ namespace marketsystem.dao
 
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("Não foi possível alterar funcionario " + e.Message);
+                throw new Exception("Não foi possível alterar funcionario " + ex.Message);
             }
             finally
             {
@@ -204,9 +204,9 @@ namespace marketsystem.dao
 
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("Falha ao excluír " + e.Message);
+                throw new Exception("Falha ao excluír " + ex.Message);
             }
             finally
             {
