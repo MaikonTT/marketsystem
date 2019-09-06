@@ -101,22 +101,25 @@ namespace marketsystem
             }
             else
             {
+                string msg = "Preencha o campo:\n";
+
                 if (string.IsNullOrWhiteSpace(txtCadNome.Text))
                 {
-                    MessageBox.Show("Preencha o campo Nome!");
+                    msg += "\nNome!";
                 }
                 if (string.IsNullOrWhiteSpace(txtCadCnpj.Text))
                 {
-                    MessageBox.Show("Preencha o campo CNPJ!");
+                    msg += "\nCNPJ!";
                 }
                 if (string.IsNullOrWhiteSpace(txtCadTelefone.Text))
                 {
-                    MessageBox.Show("Preencha o campo Telefone!");
+                    msg += "\nTelefone";
                 }
                 if (string.IsNullOrWhiteSpace(txtCadEndereco.Text))
                 {
-                    MessageBox.Show("Preencha o campo Endereço!");
+                    msg += "\nEndereço";
                 }
+                MessageBox.Show(msg);
             }
         }
 

@@ -28,7 +28,36 @@ namespace marketsystem
         //Efetua finalização de cadastro
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            Cadastrar();
+            if (!string.IsNullOrWhiteSpace(txtCadNome.Text) && !string.IsNullOrWhiteSpace(txtCadCargo.Text) && !string.IsNullOrWhiteSpace(txtCadTelefone.Text) && !string.IsNullOrWhiteSpace(txtCadEndereco.Text) && !string.IsNullOrWhiteSpace(txtCadData_nasc.Text))
+            {
+                Cadastrar();
+            }
+            else
+            {
+                string msg = "Preencha o campo:\n";
+
+                if (string.IsNullOrWhiteSpace(txtCadNome.Text))
+                {
+                    msg += "\nNome!";
+                }
+                if (string.IsNullOrWhiteSpace(txtCadCargo.Text))
+                {
+                    msg += "\nCargo!";
+                }
+                if (string.IsNullOrWhiteSpace(txtCadTelefone.Text))
+                {
+                    msg += "\nTelefone";
+                }
+                if (string.IsNullOrWhiteSpace(txtCadEndereco.Text))
+                {
+                    msg += "\nEndereço";
+                }
+                if (string.IsNullOrWhiteSpace(txtCadData_nasc.Text))
+                {
+                    msg += "\nData de Nascimento";
+                }
+                MessageBox.Show(msg);
+            }
         }
 
         //Abre formulário de Cadastro e esconde o de Alteração caso o mesmo esteja à mostra
@@ -129,11 +158,11 @@ namespace marketsystem
         private void Cadastrar()
         {
             //adiciona o input nas variaveis
-            string Nome = txtNome.Text;
-            string Cargo = txtCargo.Text;
-            string Endereco = txtEndereco.Text;
-            string Telefone = txtTelefone.Text;
-            string Data_nasc = txtData_nasc.Text;
+            string Nome = txtCadNome.Text;
+            string Cargo = txtCadCargo.Text;
+            string Endereco = txtCadEndereco.Text;
+            string Telefone = txtCadTelefone.Text;
+            string Data_nasc = txtCadData_nasc.Text;
 
             //instancia modelo Funcionario
             Funcionario f = new Funcionario();
@@ -158,11 +187,11 @@ namespace marketsystem
             }
             finally
             {
-                txtNome.Clear();
-                txtCargo.Clear();
-                txtEndereco.Clear();
-                txtTelefone.Clear();
-                txtData_nasc.Clear();
+                txtCadNome.Clear();
+                txtCadCargo.Clear();
+                txtCadEndereco.Clear();
+                txtCadTelefone.Clear();
+                txtCadData_nasc.Clear();
 
                 Listar();
             }

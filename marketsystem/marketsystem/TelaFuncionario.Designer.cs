@@ -36,17 +36,17 @@
             this.telefone_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataNasc_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnListar = new System.Windows.Forms.Button();
-            this.btnEnviar = new System.Windows.Forms.Button();
-            this.labNome = new System.Windows.Forms.Label();
-            this.labCargo = new System.Windows.Forms.Label();
-            this.labEndereco = new System.Windows.Forms.Label();
-            this.labTelefone = new System.Windows.Forms.Label();
-            this.labData_nasc = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtCargo = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
-            this.txtData_nasc = new System.Windows.Forms.TextBox();
-            this.txtEndereco = new System.Windows.Forms.TextBox();
+            this.btnCadEnviar = new System.Windows.Forms.Button();
+            this.labCadNome = new System.Windows.Forms.Label();
+            this.labCadCargo = new System.Windows.Forms.Label();
+            this.labCadEndereco = new System.Windows.Forms.Label();
+            this.labCadTelefone = new System.Windows.Forms.Label();
+            this.labCadData_nasc = new System.Windows.Forms.Label();
+            this.txtCadNome = new System.Windows.Forms.TextBox();
+            this.txtCadCargo = new System.Windows.Forms.TextBox();
+            this.txtCadTelefone = new System.Windows.Forms.TextBox();
+            this.txtCadData_nasc = new System.Windows.Forms.TextBox();
+            this.txtCadEndereco = new System.Windows.Forms.TextBox();
             this.gbCadastrar = new System.Windows.Forms.GroupBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -162,109 +162,109 @@
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
-            // btnEnviar
+            // btnCadEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(132, 215);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(134, 23);
-            this.btnEnviar.TabIndex = 2;
-            this.btnEnviar.Text = "Enviar";
-            this.btnEnviar.UseVisualStyleBackColor = true;
-            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            this.btnCadEnviar.Location = new System.Drawing.Point(132, 215);
+            this.btnCadEnviar.Name = "btnCadEnviar";
+            this.btnCadEnviar.Size = new System.Drawing.Size(134, 23);
+            this.btnCadEnviar.TabIndex = 2;
+            this.btnCadEnviar.Text = "Enviar";
+            this.btnCadEnviar.UseVisualStyleBackColor = true;
+            this.btnCadEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
-            // labNome
+            // labCadNome
             // 
-            this.labNome.AutoSize = true;
-            this.labNome.Location = new System.Drawing.Point(46, 41);
-            this.labNome.Name = "labNome";
-            this.labNome.Size = new System.Drawing.Size(84, 13);
-            this.labNome.TabIndex = 3;
-            this.labNome.Text = "Nome completo:";
+            this.labCadNome.AutoSize = true;
+            this.labCadNome.Location = new System.Drawing.Point(46, 41);
+            this.labCadNome.Name = "labCadNome";
+            this.labCadNome.Size = new System.Drawing.Size(84, 13);
+            this.labCadNome.TabIndex = 3;
+            this.labCadNome.Text = "Nome completo:";
             // 
-            // labCargo
+            // labCadCargo
             // 
-            this.labCargo.AutoSize = true;
-            this.labCargo.Location = new System.Drawing.Point(92, 76);
-            this.labCargo.Name = "labCargo";
-            this.labCargo.Size = new System.Drawing.Size(38, 13);
-            this.labCargo.TabIndex = 4;
-            this.labCargo.Text = "Cargo:";
+            this.labCadCargo.AutoSize = true;
+            this.labCadCargo.Location = new System.Drawing.Point(92, 76);
+            this.labCadCargo.Name = "labCadCargo";
+            this.labCadCargo.Size = new System.Drawing.Size(38, 13);
+            this.labCadCargo.TabIndex = 4;
+            this.labCadCargo.Text = "Cargo:";
             // 
-            // labEndereco
+            // labCadEndereco
             // 
-            this.labEndereco.AutoSize = true;
-            this.labEndereco.Location = new System.Drawing.Point(74, 111);
-            this.labEndereco.Name = "labEndereco";
-            this.labEndereco.Size = new System.Drawing.Size(56, 13);
-            this.labEndereco.TabIndex = 5;
-            this.labEndereco.Text = "Endereço:";
+            this.labCadEndereco.AutoSize = true;
+            this.labCadEndereco.Location = new System.Drawing.Point(74, 111);
+            this.labCadEndereco.Name = "labCadEndereco";
+            this.labCadEndereco.Size = new System.Drawing.Size(56, 13);
+            this.labCadEndereco.TabIndex = 5;
+            this.labCadEndereco.Text = "Endereço:";
             // 
-            // labTelefone
+            // labCadTelefone
             // 
-            this.labTelefone.AutoSize = true;
-            this.labTelefone.Location = new System.Drawing.Point(78, 147);
-            this.labTelefone.Name = "labTelefone";
-            this.labTelefone.Size = new System.Drawing.Size(52, 13);
-            this.labTelefone.TabIndex = 6;
-            this.labTelefone.Text = "Telefone:";
+            this.labCadTelefone.AutoSize = true;
+            this.labCadTelefone.Location = new System.Drawing.Point(78, 147);
+            this.labCadTelefone.Name = "labCadTelefone";
+            this.labCadTelefone.Size = new System.Drawing.Size(52, 13);
+            this.labCadTelefone.TabIndex = 6;
+            this.labCadTelefone.Text = "Telefone:";
             // 
-            // labData_nasc
+            // labCadData_nasc
             // 
-            this.labData_nasc.AutoSize = true;
-            this.labData_nasc.Location = new System.Drawing.Point(23, 181);
-            this.labData_nasc.Name = "labData_nasc";
-            this.labData_nasc.Size = new System.Drawing.Size(107, 13);
-            this.labData_nasc.TabIndex = 7;
-            this.labData_nasc.Text = "Data de Nascimento:";
+            this.labCadData_nasc.AutoSize = true;
+            this.labCadData_nasc.Location = new System.Drawing.Point(23, 181);
+            this.labCadData_nasc.Name = "labCadData_nasc";
+            this.labCadData_nasc.Size = new System.Drawing.Size(107, 13);
+            this.labCadData_nasc.TabIndex = 7;
+            this.labCadData_nasc.Text = "Data de Nascimento:";
             // 
-            // txtNome
+            // txtCadNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(132, 38);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(208, 20);
-            this.txtNome.TabIndex = 8;
+            this.txtCadNome.Location = new System.Drawing.Point(132, 38);
+            this.txtCadNome.Name = "txtCadNome";
+            this.txtCadNome.Size = new System.Drawing.Size(208, 20);
+            this.txtCadNome.TabIndex = 8;
             // 
-            // txtCargo
+            // txtCadCargo
             // 
-            this.txtCargo.Location = new System.Drawing.Point(132, 73);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(208, 20);
-            this.txtCargo.TabIndex = 9;
+            this.txtCadCargo.Location = new System.Drawing.Point(132, 73);
+            this.txtCadCargo.Name = "txtCadCargo";
+            this.txtCadCargo.Size = new System.Drawing.Size(208, 20);
+            this.txtCadCargo.TabIndex = 9;
             // 
-            // txtTelefone
+            // txtCadTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(132, 144);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(134, 20);
-            this.txtTelefone.TabIndex = 10;
+            this.txtCadTelefone.Location = new System.Drawing.Point(132, 144);
+            this.txtCadTelefone.Name = "txtCadTelefone";
+            this.txtCadTelefone.Size = new System.Drawing.Size(134, 20);
+            this.txtCadTelefone.TabIndex = 10;
             // 
-            // txtData_nasc
+            // txtCadData_nasc
             // 
-            this.txtData_nasc.Location = new System.Drawing.Point(132, 181);
-            this.txtData_nasc.Name = "txtData_nasc";
-            this.txtData_nasc.Size = new System.Drawing.Size(134, 20);
-            this.txtData_nasc.TabIndex = 10;
+            this.txtCadData_nasc.Location = new System.Drawing.Point(132, 181);
+            this.txtCadData_nasc.Name = "txtCadData_nasc";
+            this.txtCadData_nasc.Size = new System.Drawing.Size(134, 20);
+            this.txtCadData_nasc.TabIndex = 10;
             // 
-            // txtEndereco
+            // txtCadEndereco
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(132, 111);
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(351, 20);
-            this.txtEndereco.TabIndex = 10;
+            this.txtCadEndereco.Location = new System.Drawing.Point(132, 111);
+            this.txtCadEndereco.Name = "txtCadEndereco";
+            this.txtCadEndereco.Size = new System.Drawing.Size(351, 20);
+            this.txtCadEndereco.TabIndex = 10;
             // 
             // gbCadastrar
             // 
-            this.gbCadastrar.Controls.Add(this.btnEnviar);
-            this.gbCadastrar.Controls.Add(this.labData_nasc);
-            this.gbCadastrar.Controls.Add(this.txtEndereco);
-            this.gbCadastrar.Controls.Add(this.labTelefone);
-            this.gbCadastrar.Controls.Add(this.labNome);
-            this.gbCadastrar.Controls.Add(this.txtTelefone);
-            this.gbCadastrar.Controls.Add(this.txtData_nasc);
-            this.gbCadastrar.Controls.Add(this.txtNome);
-            this.gbCadastrar.Controls.Add(this.txtCargo);
-            this.gbCadastrar.Controls.Add(this.labEndereco);
-            this.gbCadastrar.Controls.Add(this.labCargo);
+            this.gbCadastrar.Controls.Add(this.btnCadEnviar);
+            this.gbCadastrar.Controls.Add(this.labCadData_nasc);
+            this.gbCadastrar.Controls.Add(this.txtCadEndereco);
+            this.gbCadastrar.Controls.Add(this.labCadTelefone);
+            this.gbCadastrar.Controls.Add(this.labCadNome);
+            this.gbCadastrar.Controls.Add(this.txtCadTelefone);
+            this.gbCadastrar.Controls.Add(this.txtCadData_nasc);
+            this.gbCadastrar.Controls.Add(this.txtCadNome);
+            this.gbCadastrar.Controls.Add(this.txtCadCargo);
+            this.gbCadastrar.Controls.Add(this.labCadEndereco);
+            this.gbCadastrar.Controls.Add(this.labCadCargo);
             this.gbCadastrar.Location = new System.Drawing.Point(253, 328);
             this.gbCadastrar.Name = "gbCadastrar";
             this.gbCadastrar.Size = new System.Drawing.Size(643, 252);
@@ -466,8 +466,8 @@
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.dgvFunc);
-            this.Controls.Add(this.gbAlterar);
             this.Controls.Add(this.gbCadastrar);
+            this.Controls.Add(this.gbAlterar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "TelaFuncionario";
@@ -488,17 +488,17 @@
 
         private System.Windows.Forms.DataGridView dgvFunc;
         private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.Button btnEnviar;
-        private System.Windows.Forms.Label labNome;
-        private System.Windows.Forms.Label labCargo;
-        private System.Windows.Forms.Label labEndereco;
-        private System.Windows.Forms.Label labTelefone;
-        private System.Windows.Forms.Label labData_nasc;
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtCargo;
-        private System.Windows.Forms.TextBox txtTelefone;
-        private System.Windows.Forms.TextBox txtData_nasc;
-        private System.Windows.Forms.TextBox txtEndereco;
+        private System.Windows.Forms.Button btnCadEnviar;
+        private System.Windows.Forms.Label labCadNome;
+        private System.Windows.Forms.Label labCadCargo;
+        private System.Windows.Forms.Label labCadEndereco;
+        private System.Windows.Forms.Label labCadTelefone;
+        private System.Windows.Forms.Label labCadData_nasc;
+        private System.Windows.Forms.TextBox txtCadNome;
+        private System.Windows.Forms.TextBox txtCadCargo;
+        private System.Windows.Forms.TextBox txtCadTelefone;
+        private System.Windows.Forms.TextBox txtCadData_nasc;
+        private System.Windows.Forms.TextBox txtCadEndereco;
         private System.Windows.Forms.GroupBox gbCadastrar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnAlterar;
