@@ -8,19 +8,21 @@ namespace marketsystem.classes
 {
     class Marca
     {
-        public int id { get; set; }
-        public string nome { get; set; }
-        public string endereco { get; set; }
-        public string telefone { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Cnpj { get; set; }
+        public string Telefone { get; set; }
+        public string Endereco { get; set; }
 
         public Marca() {
         }
 
-        public Marca(int i, string n, string e, string t) {
-            id = i;
-            nome = n;
-            endereco = e;
-            telefone = t;
+        public Marca(int i, string n, string c, string t, string e) {
+            Id = i;
+            Nome = n;
+            Cnpj = c;
+            Telefone = t;
+            Endereco = e;
         }
     }
 }

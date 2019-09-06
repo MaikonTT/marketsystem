@@ -40,8 +40,8 @@
             this.txtAltCargo = new System.Windows.Forms.TextBox();
             this.labAltEndereco = new System.Windows.Forms.Label();
             this.labAltCargo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBuscaId = new System.Windows.Forms.TextBox();
+            this.labAltId = new System.Windows.Forms.Label();
+            this.txtAltId = new System.Windows.Forms.TextBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.labBuscar = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -77,25 +77,25 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(39, 392);
+            this.btnAlterar.Location = new System.Drawing.Point(12, 386);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(201, 23);
+            this.btnAlterar.Size = new System.Drawing.Size(228, 50);
             this.btnAlterar.TabIndex = 24;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(39, 333);
+            this.btnCadastrar.Location = new System.Drawing.Point(12, 330);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(201, 23);
+            this.btnCadastrar.Size = new System.Drawing.Size(228, 50);
             this.btnCadastrar.TabIndex = 23;
             this.btnCadastrar.Text = "Cadastrar Produto";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
             // txtAltEndereco
             // 
-            this.txtAltEndereco.Location = new System.Drawing.Point(132, 111);
+            this.txtAltEndereco.Location = new System.Drawing.Point(132, 115);
             this.txtAltEndereco.Name = "txtAltEndereco";
             this.txtAltEndereco.Size = new System.Drawing.Size(351, 20);
             this.txtAltEndereco.TabIndex = 10;
@@ -103,7 +103,7 @@
             // labAltTelefone
             // 
             this.labAltTelefone.AutoSize = true;
-            this.labAltTelefone.Location = new System.Drawing.Point(78, 147);
+            this.labAltTelefone.Location = new System.Drawing.Point(78, 151);
             this.labAltTelefone.Name = "labAltTelefone";
             this.labAltTelefone.Size = new System.Drawing.Size(52, 13);
             this.labAltTelefone.TabIndex = 6;
@@ -112,7 +112,7 @@
             // labAltNome
             // 
             this.labAltNome.AutoSize = true;
-            this.labAltNome.Location = new System.Drawing.Point(46, 41);
+            this.labAltNome.Location = new System.Drawing.Point(46, 45);
             this.labAltNome.Name = "labAltNome";
             this.labAltNome.Size = new System.Drawing.Size(84, 13);
             this.labAltNome.TabIndex = 3;
@@ -120,7 +120,7 @@
             // 
             // txtAltTelefone
             // 
-            this.txtAltTelefone.Location = new System.Drawing.Point(132, 144);
+            this.txtAltTelefone.Location = new System.Drawing.Point(132, 148);
             this.txtAltTelefone.Name = "txtAltTelefone";
             this.txtAltTelefone.Size = new System.Drawing.Size(134, 20);
             this.txtAltTelefone.TabIndex = 10;
@@ -134,14 +134,14 @@
             // 
             // txtAltNome
             // 
-            this.txtAltNome.Location = new System.Drawing.Point(132, 38);
+            this.txtAltNome.Location = new System.Drawing.Point(132, 42);
             this.txtAltNome.Name = "txtAltNome";
             this.txtAltNome.Size = new System.Drawing.Size(208, 20);
             this.txtAltNome.TabIndex = 8;
             // 
             // txtAltCargo
             // 
-            this.txtAltCargo.Location = new System.Drawing.Point(132, 73);
+            this.txtAltCargo.Location = new System.Drawing.Point(132, 77);
             this.txtAltCargo.Name = "txtAltCargo";
             this.txtAltCargo.Size = new System.Drawing.Size(208, 20);
             this.txtAltCargo.TabIndex = 9;
@@ -149,7 +149,7 @@
             // labAltEndereco
             // 
             this.labAltEndereco.AutoSize = true;
-            this.labAltEndereco.Location = new System.Drawing.Point(74, 111);
+            this.labAltEndereco.Location = new System.Drawing.Point(74, 115);
             this.labAltEndereco.Name = "labAltEndereco";
             this.labAltEndereco.Size = new System.Drawing.Size(56, 13);
             this.labAltEndereco.TabIndex = 5;
@@ -158,34 +158,34 @@
             // labAltCargo
             // 
             this.labAltCargo.AutoSize = true;
-            this.labAltCargo.Location = new System.Drawing.Point(92, 76);
+            this.labAltCargo.Location = new System.Drawing.Point(92, 80);
             this.labAltCargo.Name = "labAltCargo";
             this.labAltCargo.Size = new System.Drawing.Size(38, 13);
             this.labAltCargo.TabIndex = 4;
             this.labAltCargo.Text = "Cargo:";
             // 
-            // label1
+            // labAltId
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 367);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "ID:";
+            this.labAltId.AutoSize = true;
+            this.labAltId.Location = new System.Drawing.Point(105, 15);
+            this.labAltId.Name = "labAltId";
+            this.labAltId.Size = new System.Drawing.Size(21, 13);
+            this.labAltId.TabIndex = 28;
+            this.labAltId.Text = "ID:";
             // 
-            // txtBuscaId
+            // txtAltId
             // 
-            this.txtBuscaId.BackColor = System.Drawing.SystemColors.Info;
-            this.txtBuscaId.Location = new System.Drawing.Point(39, 364);
-            this.txtBuscaId.Name = "txtBuscaId";
-            this.txtBuscaId.Size = new System.Drawing.Size(92, 20);
-            this.txtBuscaId.TabIndex = 20;
+            this.txtAltId.BackColor = System.Drawing.SystemColors.Info;
+            this.txtAltId.Location = new System.Drawing.Point(132, 12);
+            this.txtAltId.Name = "txtAltId";
+            this.txtAltId.Size = new System.Drawing.Size(92, 20);
+            this.txtAltId.TabIndex = 20;
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(137, 362);
+            this.btnExcluir.Location = new System.Drawing.Point(12, 442);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(103, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(228, 50);
             this.btnExcluir.TabIndex = 27;
             this.btnExcluir.Text = "Excluír";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -216,6 +216,7 @@
             this.btnListar.TabIndex = 19;
             this.btnListar.Text = "Listar todos";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // dgvFunc
             // 
@@ -359,7 +360,9 @@
             // 
             this.gbAlterar.Controls.Add(this.btnAltEnviar);
             this.gbAlterar.Controls.Add(this.labAltData_nasc);
+            this.gbAlterar.Controls.Add(this.labAltId);
             this.gbAlterar.Controls.Add(this.txtAltEndereco);
+            this.gbAlterar.Controls.Add(this.txtAltId);
             this.gbAlterar.Controls.Add(this.labAltTelefone);
             this.gbAlterar.Controls.Add(this.labAltNome);
             this.gbAlterar.Controls.Add(this.txtAltTelefone);
@@ -383,15 +386,13 @@
             this.ClientSize = new System.Drawing.Size(909, 598);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtBuscaId);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.labBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.dgvFunc);
-            this.Controls.Add(this.gbCadastrar);
             this.Controls.Add(this.gbAlterar);
+            this.Controls.Add(this.gbCadastrar);
             this.Name = "TelaProduto";
             this.Text = "Tela Produto";
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).EndInit();
@@ -418,8 +419,8 @@
         private System.Windows.Forms.TextBox txtAltCargo;
         private System.Windows.Forms.Label labAltEndereco;
         private System.Windows.Forms.Label labAltCargo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtBuscaId;
+        private System.Windows.Forms.Label labAltId;
+        private System.Windows.Forms.TextBox txtAltId;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Label labBuscar;
         private System.Windows.Forms.TextBox txtBuscar;

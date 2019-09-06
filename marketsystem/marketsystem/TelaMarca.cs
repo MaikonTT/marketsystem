@@ -12,25 +12,23 @@ using marketsystem.dao;
 
 namespace marketsystem
 {
-    public partial class TelaProduto : Form
+    public partial class TelaMarca : Form
     {
-        public TelaProduto()
+        public TelaMarca()
         {
             InitializeComponent();
         }
 
-        private void btnListar_Click(object sender, EventArgs e)
+        private void btnListarTodos_Click(object sender, EventArgs e)
         {
-
+            Listar();
         }
 
-        //Metodos de acesso a classe e a DAO
-        private void Cadastrar() { }
-
-        private void Listar() { }
-
-        private void Alterar() { }
-
-        private void Excluir() { }
+        private void Listar()
+        {
+            MarcaDAO mDAO = new MarcaDAO();
+            List<Marca> dataDAO = mDAO.Listar();
+            dgvMarca.DataSource = dataDAO;
+        }
     }
 }

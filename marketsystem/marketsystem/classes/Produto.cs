@@ -14,7 +14,7 @@ namespace marketsystem.classes
         public int quantidade { get; set; }
         public double val_custo { get; set; }
         public double val_venda { get; set; }
-        //public Marca marca;
+        public Marca marca;
 
         public Produto() {
         }
