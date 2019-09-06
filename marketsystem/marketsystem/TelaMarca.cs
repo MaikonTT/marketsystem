@@ -24,6 +24,33 @@ namespace marketsystem
             Listar();
         }
 
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            if (gbCadastrar.Visible == false)
+            {
+                gbCadastrar.Show();
+                gbAlterar.Hide();
+            }
+            else
+            {
+                gbCadastrar.Hide();
+            }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (gbAlterar.Visible == false)
+            {
+                gbAlterar.Show();
+                gbCadastrar.Hide();
+            }
+            else
+            {
+                gbAlterar.Hide();
+            }
+        }
+
+        //Métodos de acesso a Classe e a DAO
         private void Listar()
         {
             MarcaDAO mDAO = new MarcaDAO();
