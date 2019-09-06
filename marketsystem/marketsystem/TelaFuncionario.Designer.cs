@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvFunc = new System.Windows.Forms.DataGridView();
+            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cargo_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endereco_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataNasc_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnListar = new System.Windows.Forms.Button();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.labNome = new System.Windows.Forms.Label();
@@ -45,7 +51,9 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.gbAlterar = new System.Windows.Forms.GroupBox();
+            this.labAltId = new System.Windows.Forms.Label();
             this.btnAltEnviar = new System.Windows.Forms.Button();
+            this.txtAltId = new System.Windows.Forms.TextBox();
             this.labAltData_nasc = new System.Windows.Forms.Label();
             this.txtAltEndereco = new System.Windows.Forms.TextBox();
             this.labAltTelefone = new System.Windows.Forms.Label();
@@ -59,14 +67,6 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.labBuscar = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.txtAltId = new System.Windows.Forms.TextBox();
-            this.labAltId = new System.Windows.Forms.Label();
-            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cargo_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endereco_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefone_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataNasc_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).BeginInit();
             this.gbCadastrar.SuspendLayout();
             this.gbAlterar.SuspendLayout();
@@ -98,6 +98,59 @@
             this.dgvFunc.Size = new System.Drawing.Size(884, 271);
             this.dgvFunc.TabIndex = 0;
             this.dgvFunc.SelectionChanged += new System.EventHandler(this.dgvFunc_SelectionChanged);
+            // 
+            // id_col
+            // 
+            this.id_col.DataPropertyName = "id";
+            this.id_col.HeaderText = "ID";
+            this.id_col.MinimumWidth = 10;
+            this.id_col.Name = "id_col";
+            this.id_col.ReadOnly = true;
+            this.id_col.Width = 30;
+            // 
+            // nome_col
+            // 
+            this.nome_col.DataPropertyName = "nome";
+            this.nome_col.HeaderText = "Nome";
+            this.nome_col.MinimumWidth = 150;
+            this.nome_col.Name = "nome_col";
+            this.nome_col.ReadOnly = true;
+            this.nome_col.Width = 190;
+            // 
+            // cargo_col
+            // 
+            this.cargo_col.DataPropertyName = "cargo";
+            this.cargo_col.HeaderText = "Cargo";
+            this.cargo_col.MinimumWidth = 150;
+            this.cargo_col.Name = "cargo_col";
+            this.cargo_col.ReadOnly = true;
+            this.cargo_col.Width = 150;
+            // 
+            // endereco_col
+            // 
+            this.endereco_col.DataPropertyName = "endereco";
+            this.endereco_col.HeaderText = "Endereço";
+            this.endereco_col.MinimumWidth = 200;
+            this.endereco_col.Name = "endereco_col";
+            this.endereco_col.ReadOnly = true;
+            this.endereco_col.Width = 300;
+            // 
+            // telefone_col
+            // 
+            this.telefone_col.DataPropertyName = "telefone";
+            this.telefone_col.HeaderText = "Telefone";
+            this.telefone_col.MinimumWidth = 100;
+            this.telefone_col.Name = "telefone_col";
+            this.telefone_col.ReadOnly = true;
+            // 
+            // dataNasc_col
+            // 
+            this.dataNasc_col.DataPropertyName = "data_nasc";
+            this.dataNasc_col.HeaderText = "Data de Nascimento";
+            this.dataNasc_col.MinimumWidth = 100;
+            this.dataNasc_col.Name = "dataNasc_col";
+            this.dataNasc_col.ReadOnly = true;
+            this.dataNasc_col.Width = 110;
             // 
             // btnListar
             // 
@@ -263,6 +316,15 @@
             this.gbAlterar.Text = "Alterar";
             this.gbAlterar.Visible = false;
             // 
+            // labAltId
+            // 
+            this.labAltId.AutoSize = true;
+            this.labAltId.Location = new System.Drawing.Point(109, 15);
+            this.labAltId.Name = "labAltId";
+            this.labAltId.Size = new System.Drawing.Size(21, 13);
+            this.labAltId.TabIndex = 17;
+            this.labAltId.Text = "ID:";
+            // 
             // btnAltEnviar
             // 
             this.btnAltEnviar.Location = new System.Drawing.Point(132, 216);
@@ -272,6 +334,16 @@
             this.btnAltEnviar.Text = "Enviar";
             this.btnAltEnviar.UseVisualStyleBackColor = true;
             this.btnAltEnviar.Click += new System.EventHandler(this.btnAltEnviar_Click);
+            // 
+            // txtAltId
+            // 
+            this.txtAltId.BackColor = System.Drawing.SystemColors.Info;
+            this.txtAltId.Location = new System.Drawing.Point(132, 12);
+            this.txtAltId.Name = "txtAltId";
+            this.txtAltId.ReadOnly = true;
+            this.txtAltId.Size = new System.Drawing.Size(74, 20);
+            this.txtAltId.TabIndex = 11;
+            this.txtAltId.TextChanged += new System.EventHandler(this.txtBuscaId_TextChanged);
             // 
             // labAltData_nasc
             // 
@@ -382,78 +454,6 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // txtAltId
-            // 
-            this.txtAltId.BackColor = System.Drawing.SystemColors.Info;
-            this.txtAltId.Location = new System.Drawing.Point(132, 12);
-            this.txtAltId.Name = "txtAltId";
-            this.txtAltId.ReadOnly = true;
-            this.txtAltId.Size = new System.Drawing.Size(74, 20);
-            this.txtAltId.TabIndex = 11;
-            this.txtAltId.TextChanged += new System.EventHandler(this.txtBuscaId_TextChanged);
-            // 
-            // labAltId
-            // 
-            this.labAltId.AutoSize = true;
-            this.labAltId.Location = new System.Drawing.Point(109, 15);
-            this.labAltId.Name = "labAltId";
-            this.labAltId.Size = new System.Drawing.Size(21, 13);
-            this.labAltId.TabIndex = 17;
-            this.labAltId.Text = "ID:";
-            // 
-            // id_col
-            // 
-            this.id_col.DataPropertyName = "id";
-            this.id_col.HeaderText = "ID";
-            this.id_col.MinimumWidth = 10;
-            this.id_col.Name = "id_col";
-            this.id_col.ReadOnly = true;
-            this.id_col.Width = 30;
-            // 
-            // nome_col
-            // 
-            this.nome_col.DataPropertyName = "nome";
-            this.nome_col.HeaderText = "Nome";
-            this.nome_col.MinimumWidth = 150;
-            this.nome_col.Name = "nome_col";
-            this.nome_col.ReadOnly = true;
-            this.nome_col.Width = 190;
-            // 
-            // cargo_col
-            // 
-            this.cargo_col.DataPropertyName = "cargo";
-            this.cargo_col.HeaderText = "Cargo";
-            this.cargo_col.MinimumWidth = 150;
-            this.cargo_col.Name = "cargo_col";
-            this.cargo_col.ReadOnly = true;
-            this.cargo_col.Width = 150;
-            // 
-            // endereco_col
-            // 
-            this.endereco_col.DataPropertyName = "endereco";
-            this.endereco_col.HeaderText = "Endereço";
-            this.endereco_col.MinimumWidth = 200;
-            this.endereco_col.Name = "endereco_col";
-            this.endereco_col.ReadOnly = true;
-            this.endereco_col.Width = 300;
-            // 
-            // telefone_col
-            // 
-            this.telefone_col.DataPropertyName = "telefone";
-            this.telefone_col.HeaderText = "Telefone";
-            this.telefone_col.MinimumWidth = 100;
-            this.telefone_col.Name = "telefone_col";
-            this.telefone_col.ReadOnly = true;
-            // 
-            // dataNasc_col
-            // 
-            this.dataNasc_col.DataPropertyName = "data_nasc";
-            this.dataNasc_col.HeaderText = "Data de Nascimento";
-            this.dataNasc_col.MinimumWidth = 100;
-            this.dataNasc_col.Name = "dataNasc_col";
-            this.dataNasc_col.ReadOnly = true;
-            this.dataNasc_col.Width = 110;
-            // 
             // TelaFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,6 +473,7 @@
             this.Name = "TelaFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaFuncionario";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaFuncionario_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).EndInit();
             this.gbCadastrar.ResumeLayout(false);
             this.gbCadastrar.PerformLayout();

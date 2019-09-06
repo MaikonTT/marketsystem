@@ -19,16 +19,19 @@ namespace marketsystem
             InitializeComponent();
         }
 
+        //Solicita todos os dados no banco e atualiza datagrid
         private void btnListar_Click(object sender, EventArgs e)
         {
             Listar();
         }
 
+        //Efetua finalização de cadastro
         private void btnEnviar_Click(object sender, EventArgs e)
         {
             Cadastrar();
         }
 
+        //Abre formulário de Cadastro e esconde o de Alteração caso o mesmo esteja à mostra
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             if (gbCadastrar.Visible == false)
@@ -42,6 +45,7 @@ namespace marketsystem
             }
         }
 
+        //Abre formulário de Alteração e esconde o de Cadastrar caso o mesmo esteja à mostra
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             if (gbAlterar.Visible == false)
@@ -55,6 +59,7 @@ namespace marketsystem
             }
         }
 
+        //Busca através dos dados digitados no campo de txtBuscar e atualiza datagrid
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             Buscar();
@@ -64,6 +69,7 @@ namespace marketsystem
             }
         }
 
+        //Botão Excluir com confirmação
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtAltNome.Text))
@@ -80,6 +86,7 @@ namespace marketsystem
             }
         }
 
+        //Busca por id da selação na datagrid e atualiza campos txtAlt...
         private void txtBuscaId_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtBuscar.Text.Trim()))
@@ -89,6 +96,7 @@ namespace marketsystem
             }
         }
 
+        //Altera dados no banco da tabela funcionario
         private void btnAltEnviar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtAltId.Text.Trim()))
@@ -97,10 +105,24 @@ namespace marketsystem
             }
         }
 
+        //Seleciona campo ID da linha selecionada
         private void dgvFunc_SelectionChanged(object sender, EventArgs e)
         {
             int id = Int32.Parse(dgvFunc.CurrentRow.Cells[0].Value.ToString());
             Buscar_id(id);
+        }
+
+        //Confirmação para fechamento do form
+        private void TelaFuncionario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Deseja sair?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
 
         //metodos da que instancia classe e DAO
@@ -166,8 +188,6 @@ namespace marketsystem
 
         private void Buscar_id(int id)
         {
-            //int id = Convert.ToInt32(txtBuscaId.Text);
-
             FuncionarioDAO fDAO = new FuncionarioDAO();
             Funcionario f = fDAO.Buscar_Id(id);
 
