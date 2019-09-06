@@ -154,7 +154,7 @@
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(759, 25);
+            this.btnListar.Location = new System.Drawing.Point(759, 23);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(137, 23);
             this.btnListar.TabIndex = 1;
