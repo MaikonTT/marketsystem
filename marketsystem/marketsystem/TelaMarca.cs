@@ -199,7 +199,7 @@ namespace marketsystem
                 try
                 {
                     marca.Id = Int32.Parse(txtAltId.Text);
-                    marca.Nome = txtAltNome.text;
+                    marca.Nome = txtAltNome.Text;
                     marca.Cnpj = txtAltCnpj.Text;
                     marca.Telefone = txtAltTelefone.Text;
                     marca.Endereco = txtAltEndereco.Text;
