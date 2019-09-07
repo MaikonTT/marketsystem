@@ -32,11 +32,6 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.labBuscar = new System.Windows.Forms.Label();
             this.btnListarTodos = new System.Windows.Forms.Button();
-            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnpj_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefone_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endereco_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtCadNome = new System.Windows.Forms.TextBox();
             this.txtCadCnpj = new System.Windows.Forms.TextBox();
@@ -64,6 +59,11 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnpj_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endereco_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).BeginInit();
             this.gbCadastrar.SuspendLayout();
             this.gbAlterar.SuspendLayout();
@@ -119,50 +119,6 @@
             this.btnListarTodos.Text = "Listar Todos";
             this.btnListarTodos.UseVisualStyleBackColor = true;
             this.btnListarTodos.Click += new System.EventHandler(this.btnListarTodos_Click);
-            // 
-            // id_col
-            // 
-            this.id_col.DataPropertyName = "Id";
-            this.id_col.HeaderText = "ID";
-            this.id_col.MinimumWidth = 50;
-            this.id_col.Name = "id_col";
-            this.id_col.ReadOnly = true;
-            // 
-            // nome_col
-            // 
-            this.nome_col.DataPropertyName = "Nome";
-            this.nome_col.HeaderText = "Nome da Empresa";
-            this.nome_col.MinimumWidth = 200;
-            this.nome_col.Name = "nome_col";
-            this.nome_col.ReadOnly = true;
-            this.nome_col.Width = 247;
-            // 
-            // cnpj_col
-            // 
-            this.cnpj_col.DataPropertyName = "Cnpj";
-            this.cnpj_col.HeaderText = "CNPJ";
-            this.cnpj_col.MinimumWidth = 100;
-            this.cnpj_col.Name = "cnpj_col";
-            this.cnpj_col.ReadOnly = true;
-            this.cnpj_col.Width = 150;
-            // 
-            // telefone_col
-            // 
-            this.telefone_col.DataPropertyName = "Telefone";
-            this.telefone_col.HeaderText = "Telefone";
-            this.telefone_col.MinimumWidth = 100;
-            this.telefone_col.Name = "telefone_col";
-            this.telefone_col.ReadOnly = true;
-            this.telefone_col.Width = 150;
-            // 
-            // endereco_col
-            // 
-            this.endereco_col.DataPropertyName = "Endereco";
-            this.endereco_col.HeaderText = "Endereço";
-            this.endereco_col.MinimumWidth = 200;
-            this.endereco_col.Name = "endereco_col";
-            this.endereco_col.ReadOnly = true;
-            this.endereco_col.Width = 300;
             // 
             // textBox1
             // 
@@ -417,6 +373,51 @@
             this.btnExcluir.TabIndex = 17;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // id_col
+            // 
+            this.id_col.DataPropertyName = "Id";
+            this.id_col.HeaderText = "ID";
+            this.id_col.MinimumWidth = 100;
+            this.id_col.Name = "id_col";
+            this.id_col.ReadOnly = true;
+            // 
+            // nome_col
+            // 
+            this.nome_col.DataPropertyName = "Nome";
+            this.nome_col.HeaderText = "Nome da Empresa";
+            this.nome_col.MinimumWidth = 247;
+            this.nome_col.Name = "nome_col";
+            this.nome_col.ReadOnly = true;
+            this.nome_col.Width = 247;
+            // 
+            // cnpj_col
+            // 
+            this.cnpj_col.DataPropertyName = "Cnpj";
+            this.cnpj_col.HeaderText = "CNPJ";
+            this.cnpj_col.MinimumWidth = 150;
+            this.cnpj_col.Name = "cnpj_col";
+            this.cnpj_col.ReadOnly = true;
+            this.cnpj_col.Width = 150;
+            // 
+            // telefone_col
+            // 
+            this.telefone_col.DataPropertyName = "Telefone";
+            this.telefone_col.HeaderText = "Telefone";
+            this.telefone_col.MinimumWidth = 150;
+            this.telefone_col.Name = "telefone_col";
+            this.telefone_col.ReadOnly = true;
+            this.telefone_col.Width = 150;
+            // 
+            // endereco_col
+            // 
+            this.endereco_col.DataPropertyName = "Endereco";
+            this.endereco_col.HeaderText = "Endereço";
+            this.endereco_col.MinimumWidth = 200;
+            this.endereco_col.Name = "endereco_col";
+            this.endereco_col.ReadOnly = true;
+            this.endereco_col.Width = 300;
             // 
             // TelaMarca
             // 
@@ -451,11 +452,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label labBuscar;
         private System.Windows.Forms.Button btnListarTodos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cnpj_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefone_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endereco_col;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtCadNome;
         private System.Windows.Forms.TextBox txtCadCnpj;
@@ -483,5 +479,10 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cnpj_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefone_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endereco_col;
     }
 }

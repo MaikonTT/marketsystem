@@ -61,7 +61,11 @@ namespace marketsystem
             Buscar();
             if (string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
-                dgvMarca.DataSource = "";
+                txtAltId.Clear();
+                txtAltNome.Clear();
+                txtAltCnpj.Clear();
+                txtAltTelefone.Clear();
+                txtAltEndereco.Clear();
             }
         }
 
@@ -75,7 +79,7 @@ namespace marketsystem
 
         private void Buscar()
         {
-            string item = "%" + txtBuscar.Text.Trim() + "%";
+            string item = "%" + txtBuscar.Text + "%";
             MarcaDAO mDAO = new MarcaDAO();
             List<Marca> listaMarca = mDAO.Buscar(item);
             dgvMarca.DataSource = listaMarca;
@@ -98,6 +102,10 @@ namespace marketsystem
             if (!string.IsNullOrWhiteSpace(txtCadNome.Text) && !string.IsNullOrWhiteSpace(txtCadCnpj.Text) && !string.IsNullOrWhiteSpace(txtCadTelefone.Text) && !string.IsNullOrWhiteSpace(txtCadEndereco.Text))
             {
                 Cadastrar();
+                if (dgvMarca.DataSource != null)
+                {
+                    Listar();
+                }
             }
             else
             {
@@ -105,11 +113,11 @@ namespace marketsystem
 
                 if (string.IsNullOrWhiteSpace(txtCadNome.Text))
                 {
-                    msg += "\nNome!";
+                    msg += "\nNome";
                 }
                 if (string.IsNullOrWhiteSpace(txtCadCnpj.Text))
                 {
-                    msg += "\nCNPJ!";
+                    msg += "\nCNPJ";
                 }
                 if (string.IsNullOrWhiteSpace(txtCadTelefone.Text))
                 {
@@ -119,7 +127,24 @@ namespace marketsystem
                 {
                     msg += "\nEndereço";
                 }
-                MessageBox.Show(msg);
+                MessageBox.Show(msg, "Aviso");
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtAltNome.Text))
+            {
+                string marca = txtAltNome.Text;
+                if (MessageBox.Show($"Deseja excluir: {marca}?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Excluir();
+                    Listar();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma marca primeiro...", "Aviso", MessageBoxButtons.OK);
             }
         }
 
@@ -145,13 +170,47 @@ namespace marketsystem
             {
                 MessageBox.Show("Não foi possível realizar o cadastro " + ex.Message);
             }
-            finally { }
-
-
+            finally
+            {
+                txtCadNome.Clear();
+                txtCadCnpj.Clear();
+                txtCadTelefone.Clear();
+                txtCadEndereco.Clear();
+            }
         }
 
         private void Alterar() { }
 
-        private void Excluir() { }
+        private void Excluir()
+        {
+            if (!string.IsNullOrWhiteSpace(txtAltId.Text))
+            {
+                try
+                {
+                    int id = Convert.ToInt32(txtAltId.Text);
+                    MarcaDAO mDAO = new MarcaDAO();
+                    mDAO.Excluir(id);
+
+                    MessageBox.Show("Cadastro apagado com Sucesso", this.Text, MessageBoxButtons.OK);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Não foi possível apagar marca " + ex.Message);
+                }
+                finally
+                {
+                    txtAltNome.Clear();
+                    txtAltCnpj.Clear();
+                    txtAltTelefone.Clear();
+                    txtAltEndereco.Clear();
+
+                    txtAltId.Clear();                    
+                }
+            }
+            else
+            {
+                MessageBox.Show("Digite um ID válido...", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

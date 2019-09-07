@@ -31,6 +31,10 @@ namespace marketsystem
             if (!string.IsNullOrWhiteSpace(txtCadNome.Text) && !string.IsNullOrWhiteSpace(txtCadCargo.Text) && !string.IsNullOrWhiteSpace(txtCadTelefone.Text) && !string.IsNullOrWhiteSpace(txtCadEndereco.Text) && !string.IsNullOrWhiteSpace(txtCadData_nasc.Text))
             {
                 Cadastrar();
+                if (dgvFunc.DataSource != null)
+                {
+                    Listar();
+                }
             }
             else
             {
@@ -38,11 +42,11 @@ namespace marketsystem
 
                 if (string.IsNullOrWhiteSpace(txtCadNome.Text))
                 {
-                    msg += "\nNome!";
+                    msg += "\nNome";
                 }
                 if (string.IsNullOrWhiteSpace(txtCadCargo.Text))
                 {
-                    msg += "\nCargo!";
+                    msg += "\nCargo";
                 }
                 if (string.IsNullOrWhiteSpace(txtCadTelefone.Text))
                 {
@@ -56,7 +60,7 @@ namespace marketsystem
                 {
                     msg += "\nData de Nascimento";
                 }
-                MessageBox.Show(msg);
+                MessageBox.Show(msg, "Aviso");
             }
         }
 
@@ -94,7 +98,12 @@ namespace marketsystem
             Buscar();
             if (string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
-                dgvFunc.DataSource = "";
+                txtAltId.Clear();
+                txtCadNome.Clear();
+                txtCadCargo.Clear();
+                txtCadEndereco.Clear();
+                txtCadTelefone.Clear();
+                txtCadData_nasc.Clear();
             }
         }
 
@@ -192,8 +201,6 @@ namespace marketsystem
                 txtCadEndereco.Clear();
                 txtCadTelefone.Clear();
                 txtCadData_nasc.Clear();
-
-                Listar();
             }
         }
 
