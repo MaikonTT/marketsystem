@@ -271,6 +271,7 @@
             this.btnAltEnviar.TabIndex = 14;
             this.btnAltEnviar.Text = "Enviar";
             this.btnAltEnviar.UseVisualStyleBackColor = true;
+            this.btnAltEnviar.Click += new System.EventHandler(this.btnAltEnviar_Click);
             // 
             // txtAltId
             // 
@@ -427,12 +428,12 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.gbCadastrar);
             this.Controls.Add(this.btnListarTodos);
             this.Controls.Add(this.labBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dgvMarca);
             this.Controls.Add(this.gbAlterar);
+            this.Controls.Add(this.gbCadastrar);
             this.Name = "TelaMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaMarca";

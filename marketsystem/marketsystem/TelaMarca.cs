@@ -148,6 +148,15 @@ namespace marketsystem
             }
         }
 
+        private void btnAltEnviar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtAltId.Text.Trim()))
+            {
+                Alterar();
+                Listar();
+            }
+        }
+
         private void Cadastrar()
         {
 
@@ -179,7 +188,41 @@ namespace marketsystem
             }
         }
 
-        private void Alterar() { }
+        private void Alterar()
+        {
+
+            Marca marca = new Marca();
+            MarcaDAO mDAO = new MarcaDAO();
+
+            if (!string.IsNullOrWhiteSpace(txtAltNome.Text.Trim()))
+            {
+                try
+                {
+                    marca.Id = Int32.Parse(txtAltId.Text);
+                    marca.Nome = txtAltNome.text;
+                    marca.Cnpj = txtAltCnpj.Text;
+                    marca.Telefone = txtAltTelefone.Text;
+                    marca.Endereco = txtAltEndereco.Text;
+
+                    mDAO.Alterar(marca);
+
+                    MessageBox.Show("Alterado com Sucesso!");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Não foi possível alterar Marca " + e.Message);
+                }
+                finally
+                {
+                    txtAltNome.Clear();
+                    txtAltCnpj.Clear();
+                    txtAltTelefone.Clear();
+                    txtAltEndereco.Clear();
+
+                    txtAltId.Clear();
+                }
+            }
+        }
 
         private void Excluir()
         {
@@ -204,7 +247,7 @@ namespace marketsystem
                     txtAltTelefone.Clear();
                     txtAltEndereco.Clear();
 
-                    txtAltId.Clear();                    
+                    txtAltId.Clear();
                 }
             }
             else

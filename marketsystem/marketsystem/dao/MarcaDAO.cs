@@ -15,7 +15,7 @@ namespace marketsystem.dao
         public string SELECT = "SELECT * FROM marca WHERE nome ILIKE @item OR cnpj ILIKE @item OR telefone ILIKE @item OR endereco ILIKE @item";
         public string SELECT_ID = "SELECT * FROM marca WHERE id_marca = @id";
         public string INSERT = "INSERT INTO marca (nome, cnpj, telefone, endereco) VALUES (@nome, @cnpj, @telefone, @endereco)";
-        public string UPDATE = "";
+        public string UPDATE = "UPDATE marca SET nome = @nome, cnpj = @cnpj, telefone = @telefone, endereco = @endereco WHERE id_marca = @id";
         public string DELETE = "DELETE FROM marca where id_marca = @id";
 
         public List<Marca> Listar()
@@ -146,7 +146,33 @@ namespace marketsystem.dao
             }
         }
 
-        public void Alterar() { }
+        public void Alterar(Marca marca)
+        {
+            NpgsqlConnection conexao = null;
+
+            try
+            {
+                conexao = new Conexao().CriarConexao();
+                NpgsqlCommand cmd = new NpgsqlCommand(INSERT, conexao);
+
+                cmd.Parameters.Add(new NpgsqlParameter("@nome", marca.Nome));
+                cmd.Parameters.Add(new NpgsqlParameter("@cnpj", marca.Cnpj));
+                cmd.Parameters.Add(new NpgsqlParameter("@telefone", marca.Telefone));
+                cmd.Parameters.Add(new NpgsqlParameter("@endereco", marca.Endereco));
+
+                cmd.Parameters.Add(new NpgsqlParameter("@id", marca.Id));
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível alterar " + ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
 
         public void Excluir(int id)
         {
