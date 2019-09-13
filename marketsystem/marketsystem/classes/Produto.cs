@@ -8,24 +8,25 @@ namespace marketsystem.classes
 {
     class Produto
     {
-        public int id { get; set; }
-        public string desc { get; set; }
-        public double peso { get; set; }
-        public int quantidade { get; set; }
-        public double val_custo { get; set; }
-        public double val_venda { get; set; }
-        //public Marca marca
+        public int Id { get; set; }
+        public string Descricao { get; set; }
+        public double Peso { get; set; }
+        public int Quantidade { get; set; }
+        public double Val_custo { get; set; }
+        public double Val_venda { get; set; }
+        public Marca Marca { get; set; }
 
         public Produto() {
         }
 
-        public Produto(int i, string d, double p, int qt, double vc, double vv) {
-            id = i;
-            desc = d;
-            peso = p;
-            quantidade = qt;
-            val_custo = vc;
-            val_venda = vv;
+        public Produto(int i, string d, double p, int qt, double vc, double vv, Marca m) {
+            Id = i;
+            Descricao = d;
+            Peso = p;
+            Quantidade = qt;
+            Val_custo = vc;
+            Val_venda = vv;
+            Marca = m;
         }
     }
 }

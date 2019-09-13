@@ -69,34 +69,6 @@ namespace marketsystem
             }
         }
 
-        //Métodos de acesso a Classe e a DAO
-        private void Listar()
-        {
-            MarcaDAO mDAO = new MarcaDAO();
-            List<Marca> listaMarca = mDAO.Listar();
-            dgvMarca.DataSource = listaMarca;
-        }
-
-        private void Buscar()
-        {
-            string item = "%" + txtBuscar.Text + "%";
-            MarcaDAO mDAO = new MarcaDAO();
-            List<Marca> listaMarca = mDAO.Buscar(item);
-            dgvMarca.DataSource = listaMarca;
-        }
-
-        private void Buscar_id(int id)
-        {
-            MarcaDAO mDAO = new MarcaDAO();
-            Marca marca = mDAO.Buscar_Id(id);
-
-            txtAltId.Text = marca.Id.ToString();
-            txtAltNome.Text = marca.Nome;
-            txtAltCnpj.Text = marca.Cnpj;
-            txtAltTelefone.Text = marca.Telefone;
-            txtAltEndereco.Text = marca.Endereco;
-        }
-
         private void btnCadEnviar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtCadNome.Text) && !string.IsNullOrWhiteSpace(txtCadCnpj.Text) && !string.IsNullOrWhiteSpace(txtCadTelefone.Text) && !string.IsNullOrWhiteSpace(txtCadEndereco.Text))
@@ -155,6 +127,35 @@ namespace marketsystem
                 Alterar();
                 Listar();
             }
+        }
+
+        //Métodos de acesso a Classe e a DAO
+        private void Listar()
+        {
+            //string que indica como será ordenado a lista
+            MarcaDAO mDAO = new MarcaDAO();
+            List<Marca> listaMarca = mDAO.Listar();
+            dgvMarca.DataSource = listaMarca;
+        }
+
+        private void Buscar()
+        {
+            string item = "%" + txtBuscar.Text + "%";
+            MarcaDAO mDAO = new MarcaDAO();
+            List<Marca> listaMarca = mDAO.Buscar(item);
+            dgvMarca.DataSource = listaMarca;
+        }
+
+        private void Buscar_id(int id)
+        {
+            MarcaDAO mDAO = new MarcaDAO();
+            Marca marca = mDAO.Buscar_Id(id);
+
+            txtAltId.Text = marca.Id.ToString();
+            txtAltNome.Text = marca.Nome;
+            txtAltCnpj.Text = marca.Cnpj;
+            txtAltTelefone.Text = marca.Telefone;
+            txtAltEndereco.Text = marca.Endereco;
         }
 
         private void Cadastrar()

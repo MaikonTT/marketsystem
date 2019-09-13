@@ -11,7 +11,7 @@ namespace marketsystem.dao
 {
     class MarcaDAO
     {
-        public string SELECT_ALL = "SELECT * FROM marca ORDER BY id_marca ASC";
+        public string SELECT_ALL = "SELECT * FROM marca";
         public string SELECT = "SELECT * FROM marca WHERE nome ILIKE @item OR cnpj ILIKE @item OR telefone ILIKE @item OR endereco ILIKE @item";
         public string SELECT_ID = "SELECT * FROM marca WHERE id_marca = @id";
         public string INSERT = "INSERT INTO marca (nome, cnpj, telefone, endereco) VALUES (@nome, @cnpj, @telefone, @endereco)";

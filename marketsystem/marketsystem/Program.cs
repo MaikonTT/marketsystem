@@ -16,7 +16,7 @@ namespace marketsystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TelaMarca());
+            Application.Run(new TelaProduto());
         }
     }
 }

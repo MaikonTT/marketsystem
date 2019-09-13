@@ -10,5 +10,10 @@ namespace marketsystem.dao
     class ProdutoDAO
     {
 
+
+        public void Cadastrar(Produto prod)
+        {
+
+        }
     }
 }

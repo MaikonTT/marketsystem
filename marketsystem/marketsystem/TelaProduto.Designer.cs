@@ -28,52 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labAltData_nasc = new System.Windows.Forms.Label();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.txtAltEndereco = new System.Windows.Forms.TextBox();
-            this.labAltTelefone = new System.Windows.Forms.Label();
-            this.labAltNome = new System.Windows.Forms.Label();
-            this.txtAltTelefone = new System.Windows.Forms.TextBox();
-            this.txtAltData_nasc = new System.Windows.Forms.TextBox();
-            this.txtAltNome = new System.Windows.Forms.TextBox();
-            this.txtAltCargo = new System.Windows.Forms.TextBox();
-            this.labAltEndereco = new System.Windows.Forms.Label();
-            this.labAltCargo = new System.Windows.Forms.Label();
-            this.labAltId = new System.Windows.Forms.Label();
-            this.txtAltId = new System.Windows.Forms.TextBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.labBuscar = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnListar = new System.Windows.Forms.Button();
             this.dgvFunc = new System.Windows.Forms.DataGridView();
-            this.gbCadastrar = new System.Windows.Forms.GroupBox();
-            this.btnEnviar = new System.Windows.Forms.Button();
-            this.labData_nasc = new System.Windows.Forms.Label();
-            this.txtEndereco = new System.Windows.Forms.TextBox();
-            this.labTelefone = new System.Windows.Forms.Label();
-            this.labNome = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
-            this.txtData_nasc = new System.Windows.Forms.TextBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtCargo = new System.Windows.Forms.TextBox();
-            this.labEndereco = new System.Windows.Forms.Label();
             this.labCargo = new System.Windows.Forms.Label();
-            this.btnAltEnviar = new System.Windows.Forms.Button();
+            this.labEndereco = new System.Windows.Forms.Label();
+            this.txtCadPeso = new System.Windows.Forms.TextBox();
+            this.txtCadDescri = new System.Windows.Forms.TextBox();
+            this.txtCadValVend = new System.Windows.Forms.TextBox();
+            this.txtCadValCust = new System.Windows.Forms.TextBox();
+            this.labNome = new System.Windows.Forms.Label();
+            this.labTelefone = new System.Windows.Forms.Label();
+            this.txtCadQuant = new System.Windows.Forms.TextBox();
+            this.labData_nasc = new System.Windows.Forms.Label();
+            this.btnCadEnviar = new System.Windows.Forms.Button();
+            this.cbCadMarca = new System.Windows.Forms.ComboBox();
+            this.labCadMarca = new System.Windows.Forms.Label();
+            this.gbCadastrar = new System.Windows.Forms.GroupBox();
             this.gbAlterar = new System.Windows.Forms.GroupBox();
+            this.labAltMarca = new System.Windows.Forms.Label();
+            this.cbAltMarca = new System.Windows.Forms.ComboBox();
+            this.btnAltEnviar = new System.Windows.Forms.Button();
+            this.labAltValVend = new System.Windows.Forms.Label();
+            this.txtAltQuant = new System.Windows.Forms.TextBox();
+            this.labAltValCust = new System.Windows.Forms.Label();
+            this.labAltDesc = new System.Windows.Forms.Label();
+            this.txtAltValCust = new System.Windows.Forms.TextBox();
+            this.txtAltValVend = new System.Windows.Forms.TextBox();
+            this.txtAltDesc = new System.Windows.Forms.TextBox();
+            this.txtAltPeso = new System.Windows.Forms.TextBox();
+            this.labAltQuant = new System.Windows.Forms.Label();
+            this.labAltPeso = new System.Windows.Forms.Label();
+            this.txtAltId = new System.Windows.Forms.TextBox();
+            this.labAltId = new System.Windows.Forms.Label();
+            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peso_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quant_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valcust_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valvend_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).BeginInit();
             this.gbCadastrar.SuspendLayout();
             this.gbAlterar.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // labAltData_nasc
-            // 
-            this.labAltData_nasc.AutoSize = true;
-            this.labAltData_nasc.Location = new System.Drawing.Point(23, 181);
-            this.labAltData_nasc.Name = "labAltData_nasc";
-            this.labAltData_nasc.Size = new System.Drawing.Size(107, 13);
-            this.labAltData_nasc.TabIndex = 7;
-            this.labAltData_nasc.Text = "Data de Nascimento:";
             // 
             // btnAlterar
             // 
@@ -92,94 +94,7 @@
             this.btnCadastrar.TabIndex = 23;
             this.btnCadastrar.Text = "Cadastrar Produto";
             this.btnCadastrar.UseVisualStyleBackColor = true;
-            // 
-            // txtAltEndereco
-            // 
-            this.txtAltEndereco.Location = new System.Drawing.Point(132, 115);
-            this.txtAltEndereco.Name = "txtAltEndereco";
-            this.txtAltEndereco.Size = new System.Drawing.Size(351, 20);
-            this.txtAltEndereco.TabIndex = 10;
-            // 
-            // labAltTelefone
-            // 
-            this.labAltTelefone.AutoSize = true;
-            this.labAltTelefone.Location = new System.Drawing.Point(78, 151);
-            this.labAltTelefone.Name = "labAltTelefone";
-            this.labAltTelefone.Size = new System.Drawing.Size(52, 13);
-            this.labAltTelefone.TabIndex = 6;
-            this.labAltTelefone.Text = "Telefone:";
-            // 
-            // labAltNome
-            // 
-            this.labAltNome.AutoSize = true;
-            this.labAltNome.Location = new System.Drawing.Point(46, 45);
-            this.labAltNome.Name = "labAltNome";
-            this.labAltNome.Size = new System.Drawing.Size(84, 13);
-            this.labAltNome.TabIndex = 3;
-            this.labAltNome.Text = "Nome completo:";
-            // 
-            // txtAltTelefone
-            // 
-            this.txtAltTelefone.Location = new System.Drawing.Point(132, 148);
-            this.txtAltTelefone.Name = "txtAltTelefone";
-            this.txtAltTelefone.Size = new System.Drawing.Size(134, 20);
-            this.txtAltTelefone.TabIndex = 10;
-            // 
-            // txtAltData_nasc
-            // 
-            this.txtAltData_nasc.Location = new System.Drawing.Point(132, 181);
-            this.txtAltData_nasc.Name = "txtAltData_nasc";
-            this.txtAltData_nasc.Size = new System.Drawing.Size(134, 20);
-            this.txtAltData_nasc.TabIndex = 10;
-            // 
-            // txtAltNome
-            // 
-            this.txtAltNome.Location = new System.Drawing.Point(132, 42);
-            this.txtAltNome.Name = "txtAltNome";
-            this.txtAltNome.Size = new System.Drawing.Size(208, 20);
-            this.txtAltNome.TabIndex = 8;
-            // 
-            // txtAltCargo
-            // 
-            this.txtAltCargo.Location = new System.Drawing.Point(132, 77);
-            this.txtAltCargo.Name = "txtAltCargo";
-            this.txtAltCargo.Size = new System.Drawing.Size(208, 20);
-            this.txtAltCargo.TabIndex = 9;
-            // 
-            // labAltEndereco
-            // 
-            this.labAltEndereco.AutoSize = true;
-            this.labAltEndereco.Location = new System.Drawing.Point(74, 115);
-            this.labAltEndereco.Name = "labAltEndereco";
-            this.labAltEndereco.Size = new System.Drawing.Size(56, 13);
-            this.labAltEndereco.TabIndex = 5;
-            this.labAltEndereco.Text = "Endereço:";
-            // 
-            // labAltCargo
-            // 
-            this.labAltCargo.AutoSize = true;
-            this.labAltCargo.Location = new System.Drawing.Point(92, 80);
-            this.labAltCargo.Name = "labAltCargo";
-            this.labAltCargo.Size = new System.Drawing.Size(38, 13);
-            this.labAltCargo.TabIndex = 4;
-            this.labAltCargo.Text = "Cargo:";
-            // 
-            // labAltId
-            // 
-            this.labAltId.AutoSize = true;
-            this.labAltId.Location = new System.Drawing.Point(105, 15);
-            this.labAltId.Name = "labAltId";
-            this.labAltId.Size = new System.Drawing.Size(21, 13);
-            this.labAltId.TabIndex = 28;
-            this.labAltId.Text = "ID:";
-            // 
-            // txtAltId
-            // 
-            this.txtAltId.BackColor = System.Drawing.SystemColors.Info;
-            this.txtAltId.Location = new System.Drawing.Point(132, 12);
-            this.txtAltId.Name = "txtAltId";
-            this.txtAltId.Size = new System.Drawing.Size(92, 20);
-            this.txtAltId.TabIndex = 20;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnExcluir
             // 
@@ -225,6 +140,14 @@
             this.dgvFunc.AllowUserToResizeRows = false;
             this.dgvFunc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvFunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFunc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_col,
+            this.desc_col,
+            this.marca_col,
+            this.peso_col,
+            this.quant_col,
+            this.valcust_col,
+            this.valvend_col});
             this.dgvFunc.Location = new System.Drawing.Point(12, 49);
             this.dgvFunc.Name = "dgvFunc";
             this.dgvFunc.ReadOnly = true;
@@ -237,60 +160,51 @@
             this.dgvFunc.Size = new System.Drawing.Size(884, 271);
             this.dgvFunc.TabIndex = 18;
             // 
-            // gbCadastrar
+            // labCargo
             // 
-            this.gbCadastrar.Controls.Add(this.btnEnviar);
-            this.gbCadastrar.Controls.Add(this.labData_nasc);
-            this.gbCadastrar.Controls.Add(this.txtEndereco);
-            this.gbCadastrar.Controls.Add(this.labTelefone);
-            this.gbCadastrar.Controls.Add(this.labNome);
-            this.gbCadastrar.Controls.Add(this.txtTelefone);
-            this.gbCadastrar.Controls.Add(this.txtData_nasc);
-            this.gbCadastrar.Controls.Add(this.txtNome);
-            this.gbCadastrar.Controls.Add(this.txtCargo);
-            this.gbCadastrar.Controls.Add(this.labEndereco);
-            this.gbCadastrar.Controls.Add(this.labCargo);
-            this.gbCadastrar.Location = new System.Drawing.Point(253, 326);
-            this.gbCadastrar.Name = "gbCadastrar";
-            this.gbCadastrar.Size = new System.Drawing.Size(643, 252);
-            this.gbCadastrar.TabIndex = 21;
-            this.gbCadastrar.TabStop = false;
-            this.gbCadastrar.Text = "Cadastrar";
-            this.gbCadastrar.Visible = false;
+            this.labCargo.AutoSize = true;
+            this.labCargo.Location = new System.Drawing.Point(92, 106);
+            this.labCargo.Name = "labCargo";
+            this.labCargo.Size = new System.Drawing.Size(34, 13);
+            this.labCargo.TabIndex = 4;
+            this.labCargo.Text = "Peso:";
             // 
-            // btnEnviar
+            // labEndereco
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(132, 215);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(134, 23);
-            this.btnEnviar.TabIndex = 2;
-            this.btnEnviar.Text = "Enviar";
-            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.labEndereco.AutoSize = true;
+            this.labEndereco.Location = new System.Drawing.Point(61, 134);
+            this.labEndereco.Name = "labEndereco";
+            this.labEndereco.Size = new System.Drawing.Size(65, 13);
+            this.labEndereco.TabIndex = 5;
+            this.labEndereco.Text = "Quantidade:";
             // 
-            // labData_nasc
+            // txtCadPeso
             // 
-            this.labData_nasc.AutoSize = true;
-            this.labData_nasc.Location = new System.Drawing.Point(43, 184);
-            this.labData_nasc.Name = "labData_nasc";
-            this.labData_nasc.Size = new System.Drawing.Size(83, 13);
-            this.labData_nasc.TabIndex = 7;
-            this.labData_nasc.Text = "Valor de Venda:";
+            this.txtCadPeso.Location = new System.Drawing.Point(132, 103);
+            this.txtCadPeso.Name = "txtCadPeso";
+            this.txtCadPeso.Size = new System.Drawing.Size(134, 20);
+            this.txtCadPeso.TabIndex = 9;
             // 
-            // txtEndereco
+            // txtCadDescri
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(132, 111);
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(134, 20);
-            this.txtEndereco.TabIndex = 10;
+            this.txtCadDescri.Location = new System.Drawing.Point(132, 38);
+            this.txtCadDescri.Name = "txtCadDescri";
+            this.txtCadDescri.Size = new System.Drawing.Size(271, 20);
+            this.txtCadDescri.TabIndex = 8;
             // 
-            // labTelefone
+            // txtCadValVend
             // 
-            this.labTelefone.AutoSize = true;
-            this.labTelefone.Location = new System.Drawing.Point(47, 147);
-            this.labTelefone.Name = "labTelefone";
-            this.labTelefone.Size = new System.Drawing.Size(79, 13);
-            this.labTelefone.TabIndex = 6;
-            this.labTelefone.Text = "Valor de Custo:";
+            this.txtCadValVend.Location = new System.Drawing.Point(132, 189);
+            this.txtCadValVend.Name = "txtCadValVend";
+            this.txtCadValVend.Size = new System.Drawing.Size(134, 20);
+            this.txtCadValVend.TabIndex = 10;
+            // 
+            // txtCadValCust
+            // 
+            this.txtCadValCust.Location = new System.Drawing.Point(132, 161);
+            this.txtCadValCust.Name = "txtCadValCust";
+            this.txtCadValCust.Size = new System.Drawing.Size(134, 20);
+            this.txtCadValCust.TabIndex = 10;
             // 
             // labNome
             // 
@@ -301,51 +215,122 @@
             this.labNome.TabIndex = 3;
             this.labNome.Text = "Descrição do Produto:";
             // 
-            // txtTelefone
+            // labTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(132, 144);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(134, 20);
-            this.txtTelefone.TabIndex = 10;
+            this.labTelefone.AutoSize = true;
+            this.labTelefone.Location = new System.Drawing.Point(46, 164);
+            this.labTelefone.Name = "labTelefone";
+            this.labTelefone.Size = new System.Drawing.Size(79, 13);
+            this.labTelefone.TabIndex = 6;
+            this.labTelefone.Text = "Valor de Custo:";
             // 
-            // txtData_nasc
+            // txtCadQuant
             // 
-            this.txtData_nasc.Location = new System.Drawing.Point(132, 181);
-            this.txtData_nasc.Name = "txtData_nasc";
-            this.txtData_nasc.Size = new System.Drawing.Size(134, 20);
-            this.txtData_nasc.TabIndex = 10;
+            this.txtCadQuant.Location = new System.Drawing.Point(132, 131);
+            this.txtCadQuant.Name = "txtCadQuant";
+            this.txtCadQuant.Size = new System.Drawing.Size(134, 20);
+            this.txtCadQuant.TabIndex = 10;
             // 
-            // txtNome
+            // labData_nasc
             // 
-            this.txtNome.Location = new System.Drawing.Point(132, 38);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(271, 20);
-            this.txtNome.TabIndex = 8;
+            this.labData_nasc.AutoSize = true;
+            this.labData_nasc.Location = new System.Drawing.Point(42, 192);
+            this.labData_nasc.Name = "labData_nasc";
+            this.labData_nasc.Size = new System.Drawing.Size(83, 13);
+            this.labData_nasc.TabIndex = 7;
+            this.labData_nasc.Text = "Valor de Venda:";
             // 
-            // txtCargo
+            // btnCadEnviar
             // 
-            this.txtCargo.Location = new System.Drawing.Point(132, 73);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(134, 20);
-            this.txtCargo.TabIndex = 9;
+            this.btnCadEnviar.Location = new System.Drawing.Point(132, 215);
+            this.btnCadEnviar.Name = "btnCadEnviar";
+            this.btnCadEnviar.Size = new System.Drawing.Size(134, 23);
+            this.btnCadEnviar.TabIndex = 2;
+            this.btnCadEnviar.Text = "Enviar";
+            this.btnCadEnviar.UseVisualStyleBackColor = true;
             // 
-            // labEndereco
+            // cbCadMarca
             // 
-            this.labEndereco.AutoSize = true;
-            this.labEndereco.Location = new System.Drawing.Point(61, 114);
-            this.labEndereco.Name = "labEndereco";
-            this.labEndereco.Size = new System.Drawing.Size(65, 13);
-            this.labEndereco.TabIndex = 5;
-            this.labEndereco.Text = "Quantidade:";
+            this.cbCadMarca.FormattingEnabled = true;
+            this.cbCadMarca.Location = new System.Drawing.Point(132, 68);
+            this.cbCadMarca.Name = "cbCadMarca";
+            this.cbCadMarca.Size = new System.Drawing.Size(134, 21);
+            this.cbCadMarca.TabIndex = 11;
             // 
-            // labCargo
+            // labCadMarca
             // 
-            this.labCargo.AutoSize = true;
-            this.labCargo.Location = new System.Drawing.Point(92, 76);
-            this.labCargo.Name = "labCargo";
-            this.labCargo.Size = new System.Drawing.Size(34, 13);
-            this.labCargo.TabIndex = 4;
-            this.labCargo.Text = "Peso:";
+            this.labCadMarca.AutoSize = true;
+            this.labCadMarca.Location = new System.Drawing.Point(86, 71);
+            this.labCadMarca.Name = "labCadMarca";
+            this.labCadMarca.Size = new System.Drawing.Size(40, 13);
+            this.labCadMarca.TabIndex = 12;
+            this.labCadMarca.Text = "Marca:";
+            // 
+            // gbCadastrar
+            // 
+            this.gbCadastrar.Controls.Add(this.labCadMarca);
+            this.gbCadastrar.Controls.Add(this.cbCadMarca);
+            this.gbCadastrar.Controls.Add(this.btnCadEnviar);
+            this.gbCadastrar.Controls.Add(this.labData_nasc);
+            this.gbCadastrar.Controls.Add(this.txtCadQuant);
+            this.gbCadastrar.Controls.Add(this.labTelefone);
+            this.gbCadastrar.Controls.Add(this.labNome);
+            this.gbCadastrar.Controls.Add(this.txtCadValCust);
+            this.gbCadastrar.Controls.Add(this.txtCadValVend);
+            this.gbCadastrar.Controls.Add(this.txtCadDescri);
+            this.gbCadastrar.Controls.Add(this.txtCadPeso);
+            this.gbCadastrar.Controls.Add(this.labEndereco);
+            this.gbCadastrar.Controls.Add(this.labCargo);
+            this.gbCadastrar.Location = new System.Drawing.Point(253, 326);
+            this.gbCadastrar.Name = "gbCadastrar";
+            this.gbCadastrar.Size = new System.Drawing.Size(643, 252);
+            this.gbCadastrar.TabIndex = 21;
+            this.gbCadastrar.TabStop = false;
+            this.gbCadastrar.Text = "Cadastrar";
+            this.gbCadastrar.Visible = false;
+            // 
+            // gbAlterar
+            // 
+            this.gbAlterar.Controls.Add(this.labAltId);
+            this.gbAlterar.Controls.Add(this.txtAltId);
+            this.gbAlterar.Controls.Add(this.labAltMarca);
+            this.gbAlterar.Controls.Add(this.cbAltMarca);
+            this.gbAlterar.Controls.Add(this.btnAltEnviar);
+            this.gbAlterar.Controls.Add(this.labAltValVend);
+            this.gbAlterar.Controls.Add(this.txtAltQuant);
+            this.gbAlterar.Controls.Add(this.labAltValCust);
+            this.gbAlterar.Controls.Add(this.labAltDesc);
+            this.gbAlterar.Controls.Add(this.txtAltValCust);
+            this.gbAlterar.Controls.Add(this.txtAltValVend);
+            this.gbAlterar.Controls.Add(this.txtAltDesc);
+            this.gbAlterar.Controls.Add(this.txtAltPeso);
+            this.gbAlterar.Controls.Add(this.labAltQuant);
+            this.gbAlterar.Controls.Add(this.labAltPeso);
+            this.gbAlterar.Location = new System.Drawing.Point(253, 326);
+            this.gbAlterar.Name = "gbAlterar";
+            this.gbAlterar.Size = new System.Drawing.Size(643, 252);
+            this.gbAlterar.TabIndex = 28;
+            this.gbAlterar.TabStop = false;
+            this.gbAlterar.Text = "Alterar";
+            this.gbAlterar.Visible = false;
+            // 
+            // labAltMarca
+            // 
+            this.labAltMarca.AutoSize = true;
+            this.labAltMarca.Location = new System.Drawing.Point(86, 71);
+            this.labAltMarca.Name = "labAltMarca";
+            this.labAltMarca.Size = new System.Drawing.Size(40, 13);
+            this.labAltMarca.TabIndex = 12;
+            this.labAltMarca.Text = "Marca:";
+            // 
+            // cbAltMarca
+            // 
+            this.cbAltMarca.FormattingEnabled = true;
+            this.cbAltMarca.Location = new System.Drawing.Point(132, 68);
+            this.cbAltMarca.Name = "cbAltMarca";
+            this.cbAltMarca.Size = new System.Drawing.Size(134, 21);
+            this.cbAltMarca.Sorted = true;
+            this.cbAltMarca.TabIndex = 11;
             // 
             // btnAltEnviar
             // 
@@ -356,28 +341,163 @@
             this.btnAltEnviar.Text = "Enviar";
             this.btnAltEnviar.UseVisualStyleBackColor = true;
             // 
-            // gbAlterar
+            // labAltValVend
             // 
-            this.gbAlterar.Controls.Add(this.btnAltEnviar);
-            this.gbAlterar.Controls.Add(this.labAltData_nasc);
-            this.gbAlterar.Controls.Add(this.labAltId);
-            this.gbAlterar.Controls.Add(this.txtAltEndereco);
-            this.gbAlterar.Controls.Add(this.txtAltId);
-            this.gbAlterar.Controls.Add(this.labAltTelefone);
-            this.gbAlterar.Controls.Add(this.labAltNome);
-            this.gbAlterar.Controls.Add(this.txtAltTelefone);
-            this.gbAlterar.Controls.Add(this.txtAltData_nasc);
-            this.gbAlterar.Controls.Add(this.txtAltNome);
-            this.gbAlterar.Controls.Add(this.txtAltCargo);
-            this.gbAlterar.Controls.Add(this.labAltEndereco);
-            this.gbAlterar.Controls.Add(this.labAltCargo);
-            this.gbAlterar.Location = new System.Drawing.Point(253, 326);
-            this.gbAlterar.Name = "gbAlterar";
-            this.gbAlterar.Size = new System.Drawing.Size(643, 252);
-            this.gbAlterar.TabIndex = 22;
-            this.gbAlterar.TabStop = false;
-            this.gbAlterar.Text = "Alterar";
-            this.gbAlterar.Visible = false;
+            this.labAltValVend.AutoSize = true;
+            this.labAltValVend.Location = new System.Drawing.Point(42, 192);
+            this.labAltValVend.Name = "labAltValVend";
+            this.labAltValVend.Size = new System.Drawing.Size(83, 13);
+            this.labAltValVend.TabIndex = 7;
+            this.labAltValVend.Text = "Valor de Venda:";
+            // 
+            // txtAltQuant
+            // 
+            this.txtAltQuant.Location = new System.Drawing.Point(132, 131);
+            this.txtAltQuant.Name = "txtAltQuant";
+            this.txtAltQuant.Size = new System.Drawing.Size(134, 20);
+            this.txtAltQuant.TabIndex = 10;
+            // 
+            // labAltValCust
+            // 
+            this.labAltValCust.AutoSize = true;
+            this.labAltValCust.Location = new System.Drawing.Point(46, 164);
+            this.labAltValCust.Name = "labAltValCust";
+            this.labAltValCust.Size = new System.Drawing.Size(79, 13);
+            this.labAltValCust.TabIndex = 6;
+            this.labAltValCust.Text = "Valor de Custo:";
+            // 
+            // labAltDesc
+            // 
+            this.labAltDesc.AutoSize = true;
+            this.labAltDesc.Location = new System.Drawing.Point(12, 41);
+            this.labAltDesc.Name = "labAltDesc";
+            this.labAltDesc.Size = new System.Drawing.Size(113, 13);
+            this.labAltDesc.TabIndex = 3;
+            this.labAltDesc.Text = "Descrição do Produto:";
+            // 
+            // txtAltValCust
+            // 
+            this.txtAltValCust.Location = new System.Drawing.Point(132, 161);
+            this.txtAltValCust.Name = "txtAltValCust";
+            this.txtAltValCust.Size = new System.Drawing.Size(134, 20);
+            this.txtAltValCust.TabIndex = 10;
+            // 
+            // txtAltValVend
+            // 
+            this.txtAltValVend.Location = new System.Drawing.Point(132, 189);
+            this.txtAltValVend.Name = "txtAltValVend";
+            this.txtAltValVend.Size = new System.Drawing.Size(134, 20);
+            this.txtAltValVend.TabIndex = 10;
+            // 
+            // txtAltDesc
+            // 
+            this.txtAltDesc.Location = new System.Drawing.Point(132, 38);
+            this.txtAltDesc.Name = "txtAltDesc";
+            this.txtAltDesc.Size = new System.Drawing.Size(271, 20);
+            this.txtAltDesc.TabIndex = 8;
+            // 
+            // txtAltPeso
+            // 
+            this.txtAltPeso.Location = new System.Drawing.Point(132, 103);
+            this.txtAltPeso.Name = "txtAltPeso";
+            this.txtAltPeso.Size = new System.Drawing.Size(134, 20);
+            this.txtAltPeso.TabIndex = 9;
+            // 
+            // labAltQuant
+            // 
+            this.labAltQuant.AutoSize = true;
+            this.labAltQuant.Location = new System.Drawing.Point(61, 134);
+            this.labAltQuant.Name = "labAltQuant";
+            this.labAltQuant.Size = new System.Drawing.Size(65, 13);
+            this.labAltQuant.TabIndex = 5;
+            this.labAltQuant.Text = "Quantidade:";
+            // 
+            // labAltPeso
+            // 
+            this.labAltPeso.AutoSize = true;
+            this.labAltPeso.Location = new System.Drawing.Point(92, 106);
+            this.labAltPeso.Name = "labAltPeso";
+            this.labAltPeso.Size = new System.Drawing.Size(34, 13);
+            this.labAltPeso.TabIndex = 4;
+            this.labAltPeso.Text = "Peso:";
+            // 
+            // txtAltId
+            // 
+            this.txtAltId.BackColor = System.Drawing.SystemColors.Info;
+            this.txtAltId.Location = new System.Drawing.Point(132, 12);
+            this.txtAltId.Name = "txtAltId";
+            this.txtAltId.Size = new System.Drawing.Size(81, 20);
+            this.txtAltId.TabIndex = 13;
+            // 
+            // labAltId
+            // 
+            this.labAltId.AutoSize = true;
+            this.labAltId.Location = new System.Drawing.Point(105, 16);
+            this.labAltId.Name = "labAltId";
+            this.labAltId.Size = new System.Drawing.Size(21, 13);
+            this.labAltId.TabIndex = 14;
+            this.labAltId.Text = "ID:";
+            // 
+            // id_col
+            // 
+            this.id_col.DataPropertyName = "id";
+            this.id_col.HeaderText = "ID";
+            this.id_col.MinimumWidth = 80;
+            this.id_col.Name = "id_col";
+            this.id_col.ReadOnly = true;
+            this.id_col.Width = 80;
+            // 
+            // desc_col
+            // 
+            this.desc_col.DataPropertyName = "descricao";
+            this.desc_col.HeaderText = "Descrição do Produto";
+            this.desc_col.MinimumWidth = 300;
+            this.desc_col.Name = "desc_col";
+            this.desc_col.ReadOnly = true;
+            this.desc_col.Width = 300;
+            // 
+            // marca_col
+            // 
+            this.marca_col.DataPropertyName = "marca";
+            this.marca_col.HeaderText = "Marca";
+            this.marca_col.MinimumWidth = 140;
+            this.marca_col.Name = "marca_col";
+            this.marca_col.ReadOnly = true;
+            this.marca_col.Width = 140;
+            // 
+            // peso_col
+            // 
+            this.peso_col.DataPropertyName = "peso";
+            this.peso_col.HeaderText = "Peso";
+            this.peso_col.MinimumWidth = 80;
+            this.peso_col.Name = "peso_col";
+            this.peso_col.ReadOnly = true;
+            this.peso_col.Width = 80;
+            // 
+            // quant_col
+            // 
+            this.quant_col.DataPropertyName = "quantidade";
+            this.quant_col.HeaderText = "Quantidade";
+            this.quant_col.MinimumWidth = 80;
+            this.quant_col.Name = "quant_col";
+            this.quant_col.ReadOnly = true;
+            this.quant_col.Width = 80;
+            // 
+            // valcust_col
+            // 
+            this.valcust_col.DataPropertyName = "val_custo";
+            this.valcust_col.HeaderText = "Valor de Custo";
+            this.valcust_col.MinimumWidth = 100;
+            this.valcust_col.Name = "valcust_col";
+            this.valcust_col.ReadOnly = true;
+            // 
+            // valvend_col
+            // 
+            this.valvend_col.DataPropertyName = "val_vend";
+            this.valvend_col.HeaderText = "Valor de Venda";
+            this.valvend_col.MinimumWidth = 100;
+            this.valvend_col.Name = "valvend_col";
+            this.valvend_col.ReadOnly = true;
             // 
             // TelaProduto
             // 
@@ -391,8 +511,8 @@
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.dgvFunc);
-            this.Controls.Add(this.gbAlterar);
             this.Controls.Add(this.gbCadastrar);
+            this.Controls.Add(this.gbAlterar);
             this.Name = "TelaProduto";
             this.Text = "Tela Produto";
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).EndInit();
@@ -406,39 +526,49 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labAltData_nasc;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.TextBox txtAltEndereco;
-        private System.Windows.Forms.Label labAltTelefone;
-        private System.Windows.Forms.Label labAltNome;
-        private System.Windows.Forms.TextBox txtAltTelefone;
-        private System.Windows.Forms.TextBox txtAltData_nasc;
-        private System.Windows.Forms.TextBox txtAltNome;
-        private System.Windows.Forms.TextBox txtAltCargo;
-        private System.Windows.Forms.Label labAltEndereco;
-        private System.Windows.Forms.Label labAltCargo;
-        private System.Windows.Forms.Label labAltId;
-        private System.Windows.Forms.TextBox txtAltId;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Label labBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.DataGridView dgvFunc;
-        private System.Windows.Forms.GroupBox gbCadastrar;
-        private System.Windows.Forms.Button btnEnviar;
-        private System.Windows.Forms.Label labData_nasc;
-        private System.Windows.Forms.TextBox txtEndereco;
-        private System.Windows.Forms.Label labTelefone;
-        private System.Windows.Forms.Label labNome;
-        private System.Windows.Forms.TextBox txtTelefone;
-        private System.Windows.Forms.TextBox txtData_nasc;
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtCargo;
-        private System.Windows.Forms.Label labEndereco;
         private System.Windows.Forms.Label labCargo;
-        private System.Windows.Forms.Button btnAltEnviar;
+        private System.Windows.Forms.Label labEndereco;
+        private System.Windows.Forms.TextBox txtCadPeso;
+        private System.Windows.Forms.TextBox txtCadDescri;
+        private System.Windows.Forms.TextBox txtCadValVend;
+        private System.Windows.Forms.TextBox txtCadValCust;
+        private System.Windows.Forms.Label labNome;
+        private System.Windows.Forms.Label labTelefone;
+        private System.Windows.Forms.TextBox txtCadQuant;
+        private System.Windows.Forms.Label labData_nasc;
+        private System.Windows.Forms.Button btnCadEnviar;
+        private System.Windows.Forms.ComboBox cbCadMarca;
+        private System.Windows.Forms.Label labCadMarca;
+        private System.Windows.Forms.GroupBox gbCadastrar;
         private System.Windows.Forms.GroupBox gbAlterar;
+        private System.Windows.Forms.Label labAltId;
+        private System.Windows.Forms.TextBox txtAltId;
+        private System.Windows.Forms.Label labAltMarca;
+        private System.Windows.Forms.ComboBox cbAltMarca;
+        private System.Windows.Forms.Button btnAltEnviar;
+        private System.Windows.Forms.Label labAltValVend;
+        private System.Windows.Forms.TextBox txtAltQuant;
+        private System.Windows.Forms.Label labAltValCust;
+        private System.Windows.Forms.Label labAltDesc;
+        private System.Windows.Forms.TextBox txtAltValCust;
+        private System.Windows.Forms.TextBox txtAltValVend;
+        private System.Windows.Forms.TextBox txtAltDesc;
+        private System.Windows.Forms.TextBox txtAltPeso;
+        private System.Windows.Forms.Label labAltQuant;
+        private System.Windows.Forms.Label labAltPeso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desc_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marca_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peso_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quant_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valcust_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valvend_col;
     }
 }
