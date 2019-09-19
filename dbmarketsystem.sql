@@ -22,7 +22,7 @@ CREATE TABLE marca(
 	endereco	VARCHAR
 );
 CREATE TABLE produto(
-	id_prod		PRIMARY KEY,
+	id_prod		SERIAL PRIMARY KEY,
 	descricao	VARCHAR,
 	peso		NUMERIC(10,2),
 	quantidade	INT,
@@ -69,3 +69,7 @@ SELECT * FROM marca;
 CREATE VIEW Funcionario_cargo AS
 SELECT nome, cargo FROM funcionario
 ORDER BY nome ASC
+
+CREATE VIEW Produto_Marca AS
+SELECT 	id_prod, descricao,	peso, quantidade, val_custo, val_venda, nome FROM produto, marca
+WHERE id_m = id_marca

@@ -21,7 +21,7 @@ namespace marketsystem
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-
+            Listar();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -43,19 +43,56 @@ namespace marketsystem
            });
         }
 
+        private void btnCadEnviar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtCadDescri.Text) && !string.IsNullOrWhiteSpace(txtCadPeso.Text) && !string.IsNullOrWhiteSpace(txtCadQuant.Text) && !string.IsNullOrWhiteSpace(txtCadValCust.Text) && !string.IsNullOrWhiteSpace(txtCadValVend.Text))
+            {
+                Cadastrar();
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos...", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         //Metodos de acesso a classe e a DAO
         private void Cadastrar()
         {
-            ProdutoDAO pDAO = new ProdutoDAO();
-            Produto prod = new Produto();
+            try
+            {
+                ProdutoDAO pDAO = new ProdutoDAO();
+                Produto prod = new Produto();
 
-            prod.Descricao = txtCadDescri.Text;
-            //prod.Marca = cbCadMarca.SelectedValue;
+                prod.Descricao = txtCadDescri.Text;
+                prod.Peso = Double.Parse(txtCadPeso.Text);
+                prod.Quantidade = Int32.Parse(txtCadQuant.Text);
+                prod.Val_custo = Double.Parse(txtCadValCust.Text);
+                prod.Val_venda = Double.Parse(txtCadValVend.Text);
+                prod.Marca = "%" + cbCadMarca.SelectedItem + "%";
+                
+                pDAO.Cadastrar(prod);
 
-            pDAO.Cadastrar(prod);
+                MessageBox.Show("Produto cadastrado!", "Sucesso", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível completar o cadastro: " + ex.Message);
+            }
+            finally {
+                txtCadDescri.Clear();
+                txtCadPeso.Clear();
+                txtCadQuant.Clear();
+                txtCadValCust.Clear();
+                txtCadValVend.Clear();
+                cbCadMarca.Text = "";
+            }
         }
 
-        private void Listar() { }
+        private void Listar() {
+            ProdutoDAO pDAO = new ProdutoDAO();
+            List<Produto> listaProduto = pDAO.Listar();
+            dgvProd.DataSource = listaProduto;
+        }
 
         private void Alterar() { }
 

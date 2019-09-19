@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.labBuscar = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnListar = new System.Windows.Forms.Button();
-            this.dgvFunc = new System.Windows.Forms.DataGridView();
+            this.dgvProd = new System.Windows.Forms.DataGridView();
             this.labCargo = new System.Windows.Forms.Label();
             this.labEndereco = new System.Windows.Forms.Label();
             this.txtCadPeso = new System.Windows.Forms.TextBox();
@@ -50,6 +53,8 @@
             this.labCadMarca = new System.Windows.Forms.Label();
             this.gbCadastrar = new System.Windows.Forms.GroupBox();
             this.gbAlterar = new System.Windows.Forms.GroupBox();
+            this.labAltId = new System.Windows.Forms.Label();
+            this.txtAltId = new System.Windows.Forms.TextBox();
             this.labAltMarca = new System.Windows.Forms.Label();
             this.cbAltMarca = new System.Windows.Forms.ComboBox();
             this.btnAltEnviar = new System.Windows.Forms.Button();
@@ -63,8 +68,6 @@
             this.txtAltPeso = new System.Windows.Forms.TextBox();
             this.labAltQuant = new System.Windows.Forms.Label();
             this.labAltPeso = new System.Windows.Forms.Label();
-            this.txtAltId = new System.Windows.Forms.TextBox();
-            this.labAltId = new System.Windows.Forms.Label();
             this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marca_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,7 +75,7 @@
             this.quant_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valcust_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valvend_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProd)).BeginInit();
             this.gbCadastrar.SuspendLayout();
             this.gbAlterar.SuspendLayout();
             this.SuspendLayout();
@@ -133,14 +136,14 @@
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
-            // dgvFunc
+            // dgvProd
             // 
-            this.dgvFunc.AllowUserToAddRows = false;
-            this.dgvFunc.AllowUserToDeleteRows = false;
-            this.dgvFunc.AllowUserToResizeRows = false;
-            this.dgvFunc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvFunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFunc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProd.AllowUserToAddRows = false;
+            this.dgvProd.AllowUserToDeleteRows = false;
+            this.dgvProd.AllowUserToResizeRows = false;
+            this.dgvProd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_col,
             this.desc_col,
             this.marca_col,
@@ -148,17 +151,17 @@
             this.quant_col,
             this.valcust_col,
             this.valvend_col});
-            this.dgvFunc.Location = new System.Drawing.Point(12, 49);
-            this.dgvFunc.Name = "dgvFunc";
-            this.dgvFunc.ReadOnly = true;
-            this.dgvFunc.RowHeadersVisible = false;
-            this.dgvFunc.RowHeadersWidth = 40;
-            this.dgvFunc.RowTemplate.Height = 15;
-            this.dgvFunc.RowTemplate.ReadOnly = true;
-            this.dgvFunc.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFunc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFunc.Size = new System.Drawing.Size(884, 271);
-            this.dgvFunc.TabIndex = 18;
+            this.dgvProd.Location = new System.Drawing.Point(12, 49);
+            this.dgvProd.Name = "dgvProd";
+            this.dgvProd.ReadOnly = true;
+            this.dgvProd.RowHeadersVisible = false;
+            this.dgvProd.RowHeadersWidth = 40;
+            this.dgvProd.RowTemplate.Height = 15;
+            this.dgvProd.RowTemplate.ReadOnly = true;
+            this.dgvProd.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProd.Size = new System.Drawing.Size(884, 271);
+            this.dgvProd.TabIndex = 18;
             // 
             // labCargo
             // 
@@ -248,6 +251,7 @@
             this.btnCadEnviar.TabIndex = 2;
             this.btnCadEnviar.Text = "Enviar";
             this.btnCadEnviar.UseVisualStyleBackColor = true;
+            this.btnCadEnviar.Click += new System.EventHandler(this.btnCadEnviar_Click);
             // 
             // cbCadMarca
             // 
@@ -313,6 +317,23 @@
             this.gbAlterar.TabStop = false;
             this.gbAlterar.Text = "Alterar";
             this.gbAlterar.Visible = false;
+            // 
+            // labAltId
+            // 
+            this.labAltId.AutoSize = true;
+            this.labAltId.Location = new System.Drawing.Point(105, 16);
+            this.labAltId.Name = "labAltId";
+            this.labAltId.Size = new System.Drawing.Size(21, 13);
+            this.labAltId.TabIndex = 14;
+            this.labAltId.Text = "ID:";
+            // 
+            // txtAltId
+            // 
+            this.txtAltId.BackColor = System.Drawing.SystemColors.Info;
+            this.txtAltId.Location = new System.Drawing.Point(132, 12);
+            this.txtAltId.Name = "txtAltId";
+            this.txtAltId.Size = new System.Drawing.Size(81, 20);
+            this.txtAltId.TabIndex = 13;
             // 
             // labAltMarca
             // 
@@ -421,23 +442,6 @@
             this.labAltPeso.TabIndex = 4;
             this.labAltPeso.Text = "Peso:";
             // 
-            // txtAltId
-            // 
-            this.txtAltId.BackColor = System.Drawing.SystemColors.Info;
-            this.txtAltId.Location = new System.Drawing.Point(132, 12);
-            this.txtAltId.Name = "txtAltId";
-            this.txtAltId.Size = new System.Drawing.Size(81, 20);
-            this.txtAltId.TabIndex = 13;
-            // 
-            // labAltId
-            // 
-            this.labAltId.AutoSize = true;
-            this.labAltId.Location = new System.Drawing.Point(105, 16);
-            this.labAltId.Name = "labAltId";
-            this.labAltId.Size = new System.Drawing.Size(21, 13);
-            this.labAltId.TabIndex = 14;
-            this.labAltId.Text = "ID:";
-            // 
             // id_col
             // 
             this.id_col.DataPropertyName = "id";
@@ -460,19 +464,22 @@
             // 
             this.marca_col.DataPropertyName = "marca";
             this.marca_col.HeaderText = "Marca";
-            this.marca_col.MinimumWidth = 140;
+            this.marca_col.MinimumWidth = 125;
             this.marca_col.Name = "marca_col";
             this.marca_col.ReadOnly = true;
-            this.marca_col.Width = 140;
+            this.marca_col.Width = 125;
             // 
             // peso_col
             // 
             this.peso_col.DataPropertyName = "peso";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.peso_col.DefaultCellStyle = dataGridViewCellStyle1;
             this.peso_col.HeaderText = "Peso";
             this.peso_col.MinimumWidth = 80;
             this.peso_col.Name = "peso_col";
             this.peso_col.ReadOnly = true;
-            this.peso_col.Width = 80;
+            this.peso_col.Width = 88;
             // 
             // quant_col
             // 
@@ -481,11 +488,14 @@
             this.quant_col.MinimumWidth = 80;
             this.quant_col.Name = "quant_col";
             this.quant_col.ReadOnly = true;
-            this.quant_col.Width = 80;
+            this.quant_col.Width = 85;
             // 
             // valcust_col
             // 
             this.valcust_col.DataPropertyName = "val_custo";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.valcust_col.DefaultCellStyle = dataGridViewCellStyle2;
             this.valcust_col.HeaderText = "Valor de Custo";
             this.valcust_col.MinimumWidth = 100;
             this.valcust_col.Name = "valcust_col";
@@ -493,7 +503,10 @@
             // 
             // valvend_col
             // 
-            this.valvend_col.DataPropertyName = "val_vend";
+            this.valvend_col.DataPropertyName = "val_venda";
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.valvend_col.DefaultCellStyle = dataGridViewCellStyle3;
             this.valvend_col.HeaderText = "Valor de Venda";
             this.valvend_col.MinimumWidth = 100;
             this.valvend_col.Name = "valvend_col";
@@ -510,12 +523,12 @@
             this.Controls.Add(this.labBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnListar);
-            this.Controls.Add(this.dgvFunc);
+            this.Controls.Add(this.dgvProd);
             this.Controls.Add(this.gbCadastrar);
             this.Controls.Add(this.gbAlterar);
             this.Name = "TelaProduto";
             this.Text = "Tela Produto";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProd)).EndInit();
             this.gbCadastrar.ResumeLayout(false);
             this.gbCadastrar.PerformLayout();
             this.gbAlterar.ResumeLayout(false);
@@ -532,7 +545,7 @@
         private System.Windows.Forms.Label labBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.DataGridView dgvFunc;
+        private System.Windows.Forms.DataGridView dgvProd;
         private System.Windows.Forms.Label labCargo;
         private System.Windows.Forms.Label labEndereco;
         private System.Windows.Forms.TextBox txtCadPeso;

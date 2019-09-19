@@ -14,12 +14,12 @@ namespace marketsystem.classes
         public int Quantidade { get; set; }
         public double Val_custo { get; set; }
         public double Val_venda { get; set; }
-        public Marca Marca { get; set; }
+        public string Marca { get; set; }
 
         public Produto() {
         }
 
-        public Produto(int i, string d, double p, int qt, double vc, double vv, Marca m) {
+        public Produto(int i, string d, double p, int qt, double vc, double vv, string m) {
             Id = i;
             Descricao = d;
             Peso = p;
